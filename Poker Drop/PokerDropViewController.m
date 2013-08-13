@@ -7,23 +7,469 @@
 //
 
 #import "PokerDropViewController.h"
+#import "PlayingCardDeck.h"
+#import "PlayingCard.h"
+#import "CardMatchingGame.h"
+
+#import <QuartzCore/QuartzCore.h>
 
 @interface PokerDropViewController ()
+
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+@property (strong, nonatomic) CardMatchingGame *game;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLael;
+@property (weak, nonatomic) IBOutlet UILabel *highScoreLabel;
+@property (strong,nonatomic) NSMutableArray *buttonFrames; // SAVE ALL BUTTON FRAMES IN HERE
 
 @end
 
 @implementation PokerDropViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+BOOL selectCardLocked = NO;
+
+- (IBAction)reDeal {
+    [self.game dealWithCardCount:self.cardButtons.count usingDeck:[[PlayingCardDeck alloc] init]];
+    [self updateUI];
 }
 
-- (void)didReceiveMemoryWarning
+
+
+-(NSMutableArray *)buttonFrames
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if (!_buttonFrames) _buttonFrames = [[NSMutableArray alloc] init];
+    
+    return _buttonFrames;
 }
+
+-(CardMatchingGame *)game
+{
+    if (!_game) _game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count
+                                                          usingDeck:[[PlayingCardDeck alloc] init]];
+    
+    return _game;
+}
+
+-(void)setCardButtons:(NSArray *)cardButtons
+{
+    _cardButtons = cardButtons;
+    
+    [self updateUI];
+    
+}
+
+-(void) sortCardButtons
+{
+    self.cardButtons = [self.cardButtons sortedArrayUsingComparator:^NSComparisonResult(id label1, id label2) {
+        if ([label1 frame].origin.y < [label2 frame].origin.y) return NSOrderedAscending;
+        else if ([label1 frame].origin.y > [label2 frame].origin.y) return NSOrderedDescending;
+        else if ([label1 frame].origin.x < [label2 frame].origin.x) return NSOrderedAscending;
+        else if ([label1 frame].origin.x > [label2 frame].origin.x) return NSOrderedDescending;
+        else return NSOrderedSame;
+    }];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self sortCardButtons];
+    
+    for (UIButton *button in self.cardButtons)
+    {
+        [self.view sendSubviewToBack:button];
+        
+        [self.buttonFrames insertObject:[[NSValue valueWithCGRect:button.frame] copy] atIndex:[self.cardButtons indexOfObject:button]];
+        //NSLog(@"%@",[NSValue valueWithCGRect:button.frame]);
+    }
+    
+    [self.game loadHighScore];
+    
+    [self updateUI];
+    
+}
+
+-(void)highlightCardAtIndex:(int)index withColor:(UIColor *)color
+{
+    if(index >= 0 && index < 25)
+    {
+        [[self.cardButtons[index] layer] setCornerRadius:8.0f];
+        [[self.cardButtons[index] layer] setMasksToBounds:YES];
+        [[self.cardButtons[index] layer] setBorderColor:color.CGColor];
+        [[self.cardButtons[index] layer] setBorderWidth:5.0f];
+    }
+}
+
+-(void)updateUI
+{
+    for (UIButton *cardButton in self.cardButtons)
+    {
+        [[cardButton layer] setBorderWidth:0.0f];
+    }
+    
+    
+    for (UIButton *cardButton in self.cardButtons)
+    {
+        Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:cardButton]];
+        [cardButton setTitle:card.contents forState:UIControlStateNormal];
+        [cardButton setTitle:card.contents forState:UIControlStateSelected];
+        
+        cardButton.selected = card.isSwapable;
+        if (card.isSwapable) {
+            int selectedIndex = [self.cardButtons indexOfObject:cardButton];
+            
+            int left = selectedIndex - 1;
+            int top = selectedIndex - 5;
+            int bottum = selectedIndex + 5;
+            int right = selectedIndex + 1;
+            
+            BOOL doLeft = YES;
+            BOOL doRight = YES;
+            
+            
+            if (selectedIndex == 0 || selectedIndex == 5 || selectedIndex == 10 || selectedIndex == 15 || selectedIndex == 20) {
+                doLeft = NO;
+            }
+            if (selectedIndex == 4 || selectedIndex == 9 || selectedIndex == 14 || selectedIndex == 19 || selectedIndex == 14) {
+                doRight = NO;
+            }
+            
+            [self highlightCardAtIndex:selectedIndex withColor:[UIColor blueColor]];
+            
+            if (doLeft) [self highlightCardAtIndex:left withColor:[UIColor greenColor]];
+            if (doRight) [self highlightCardAtIndex:right withColor:[UIColor greenColor]];
+            
+            [self highlightCardAtIndex:top withColor:[UIColor greenColor]];
+            [self highlightCardAtIndex:bottum withColor:[UIColor greenColor]];
+        }
+        
+    }
+    
+    
+    if (self.game.score == 0) {
+        self.scoreLael.text = [NSString stringWithFormat:@"Cash: $%d", self.game.score];
+        [self.scoreLael setTextColor:[UIColor blackColor]];
+        
+    } else if (self.game.score > 0) {
+        self.scoreLael.text = [NSString stringWithFormat:@"Cash: $%d", self.game.score];
+        [self.scoreLael setTextColor:[UIColor greenColor]];
+        
+    } else {
+        self.scoreLael.text = [NSString stringWithFormat:@"Cash: -$%d", -1*self.game.score];
+        [self.scoreLael setTextColor:[UIColor redColor]];
+    }
+    
+    if (self.game.highScore == 0) {
+        self.highScoreLabel.text = [NSString stringWithFormat:@"Highest up: $%d", self.game.highScore];
+        [self.highScoreLabel setTextColor:[UIColor blackColor]];
+        
+    } else {
+        self.highScoreLabel.text = [NSString stringWithFormat:@"Highest up: $%d", self.game.highScore];
+        [self.highScoreLabel setTextColor:[UIColor greenColor]];
+        
+    }
+    
+    
+    
+}
+
+-(NSArray* )determineRowfromIndex:(int)index
+{
+    
+    
+    int start = (index/5) * 5;
+    //NSLog(@"id: %d, start: %d",index,start);
+    
+    return @[[self.game cardAtIndex:start],
+             [self.game cardAtIndex:start+1],
+             [self.game cardAtIndex:start+2],
+             [self.game cardAtIndex:start+3],
+             [self.game cardAtIndex:start+4],
+             ];
+}
+
+-(NSArray* )determineColumnfromIndex:(int)index
+{
+    
+    
+    int start = index % 5;
+    //NSLog(@"id: %d, start: %d",index,start);
+    
+    return @[[self.game cardAtIndex:start],
+             [self.game cardAtIndex:start+1*5],
+             [self.game cardAtIndex:start+2*5],
+             [self.game cardAtIndex:start+3*5],
+             [self.game cardAtIndex:start+4*5],
+             ];
+}
+
+#define CARD_SHIFT_TIME 1.7
+#define CARD_FADE_TIME 1.0
+
+- (void)fadeButtonWithContents:(NSString*)contents index:(NSUInteger)index
+{
+    
+    UIButton* fadeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [self.view addSubview:fadeButton];
+    [self.view sendSubviewToBack:fadeButton];
+    
+    [fadeButton setTitle:contents forState:UIControlStateNormal];
+    fadeButton.titleLabel.font = [[self.cardButtons lastObject] titleLabel].font;
+    fadeButton.frame = [self.buttonFrames[index] CGRectValue];
+    fadeButton.transform = CGAffineTransformMakeScale(1.0,1.0);
+    fadeButton.alpha = 1.0f;
+    
+    [UIView animateWithDuration:CARD_FADE_TIME
+                     animations:^{fadeButton.alpha = 0.0f;fadeButton.transform = CGAffineTransformMakeScale(0.0,0.0);}
+                     completion:^(BOOL finished){ [fadeButton removeFromSuperview]; }];
+    
+}
+
+-(void)displayHandText:(NSString *)handText forRowAtIndex:(NSUInteger)index
+{
+    UILabel* fadingText = [[UILabel alloc] init];
+    [self.view addSubview:fadingText];
+    [self.view bringSubviewToFront:fadingText];
+    
+    fadingText.text = handText;
+    
+    CGRect myFrame = [self.buttonFrames[index] CGRectValue];
+    myFrame.size.width = [self.buttonFrames[index+4] CGRectValue].origin.x
+    + [self.buttonFrames[index+4] CGRectValue].size.width
+    - [self.buttonFrames[index] CGRectValue].origin.x;
+    
+    fadingText.frame = myFrame;
+    fadingText.textAlignment = NSTextAlignmentCenter;
+    fadingText.alpha = 1.0f;
+    fadingText.backgroundColor = [UIColor clearColor];
+    fadingText.font = [[self.cardButtons lastObject] titleLabel].font;
+    
+    [UIView animateWithDuration:CARD_FADE_TIME
+                     animations:^{
+                         fadingText.alpha = 0.0f;
+                         //fadingText.transform = CGAffineTransformMakeScale(0.0,0.0);
+                     }
+                     completion:^(BOOL finished){ [fadingText removeFromSuperview]; }];
+}
+
+-(void)displayHandText:(NSString *)handText forColumnAtIndex:(NSUInteger)index
+{
+    
+    UILabel* fadingText = [[UILabel alloc] init];
+    [self.view addSubview:fadingText];
+    [self.view bringSubviewToFront:fadingText];
+    
+    fadingText.text = handText;
+    
+    CGRect myFrame = [self.buttonFrames[index+10] CGRectValue];
+    
+    myFrame.size.width = [self.buttonFrames[20] CGRectValue].origin.y
+    + [self.buttonFrames[20] CGRectValue].size.height
+    - [self.buttonFrames[0] CGRectValue].origin.y;
+    
+    myFrame.size.height = [self.buttonFrames[20] CGRectValue].size.width;
+    
+    myFrame.origin.x += [self.buttonFrames[20] CGRectValue].size.width/2 - myFrame.size.width/2;
+    myFrame.origin.y += [self.buttonFrames[20] CGRectValue].size.height/2 - myFrame.size.height/2;
+    
+    fadingText.frame = myFrame;
+    fadingText.textAlignment = NSTextAlignmentCenter;
+    fadingText.alpha = 1.0f;
+    fadingText.backgroundColor = [UIColor clearColor];
+    fadingText.font = [[self.cardButtons lastObject] titleLabel].font;
+    
+    [fadingText setTransform:CGAffineTransformMakeRotation(-M_PI / 2)];
+    
+    [UIView animateWithDuration:CARD_FADE_TIME
+                     animations:^{
+                         fadingText.alpha = 0.0f;
+                         //fadingText.transform = CGAffineTransformMakeScale(0.0,0.0);
+                     }
+                     completion:^(BOOL finished){ [fadingText removeFromSuperview]; }];
+}
+
+
+
+-(void)shiftRows;
+{
+    BOOL alreadySetupChaining = NO;
+    
+    for (int i=24; i>=0; i--)
+    {
+        if ([self.game cardAtIndex:i].previousIndex != i || [self.game cardAtIndex:i].isErased)
+        {
+            UIButton *button = self.cardButtons[i];
+            
+            if ([self.game cardAtIndex:i].isErased)
+            {
+                [self.game cardAtIndex:i].erased = NO;
+                
+                int previousIndex = [(PlayingCard*)[self.game cardAtIndex:i] previousIndex];
+                UIButton *prevButton = self.cardButtons[previousIndex];
+                [self fadeButtonWithContents:prevButton.titleLabel.text index:previousIndex];
+                
+                if (previousIndex%5 == 0) {
+                    NSString* handText = [(PlayingCard*)[self.game cardAtIndex:i] destroyedByHandName];
+                    [self displayHandText:handText forRowAtIndex:previousIndex];
+                }
+                
+                CGRect bottumRightButton = [[self.buttonFrames lastObject] CGRectValue];
+                
+                CGRect aboveScreen;
+                aboveScreen = [self.buttonFrames[[self.cardButtons indexOfObject:button]] CGRectValue];
+                aboveScreen.origin.y -= bottumRightButton.origin.y+bottumRightButton.size.height;
+                button.frame = aboveScreen;
+            } else {
+                button.frame = [self.buttonFrames[[self.game cardAtIndex:i].previousIndex] CGRectValue];
+            }
+            
+            if (alreadySetupChaining)
+            {
+                [UIView animateWithDuration:CARD_SHIFT_TIME
+                                 animations:^{button.frame = [self.buttonFrames[i] CGRectValue];}
+                                 completion:^(BOOL finished) {}];
+            } else {
+                selectCardLocked = YES;
+                [UIView animateWithDuration:CARD_SHIFT_TIME
+                                 animations:^{button.frame = [self.buttonFrames[i] CGRectValue];}
+                                 completion:^(BOOL finished) {
+                                     selectCardLocked = NO;
+                                     [self.game analyzeColumns];
+                                     [self shiftColumns];
+                                     [self updateUI];
+                                 }];
+                alreadySetupChaining = YES;
+            }
+            
+            [self.game cardAtIndex:i].previousIndex = i;
+        }
+    }
+}
+
+-(void)shiftColumns;
+{
+    BOOL alreadySetupChaining = NO;
+    
+    for (int i=24; i>=0; i--)
+    {
+        if ([self.game cardAtIndex:i].isErased)
+        {
+            [self.game cardAtIndex:i].erased = NO;
+            
+            UIButton *button = self.cardButtons[i];
+            
+            [self fadeButtonWithContents:button.titleLabel.text index:i];
+            
+            if (i%5 == i) {
+                NSString* handText = [(PlayingCard*)[self.game cardAtIndex:i] destroyedByHandName];
+                [self displayHandText:handText forColumnAtIndex:i];
+            }
+            
+            
+            CGRect bottumRightButton = [[self.buttonFrames lastObject] CGRectValue];
+            
+            CGRect aboveScreen;
+            aboveScreen = [self.buttonFrames[[self.cardButtons indexOfObject:button]] CGRectValue];
+            aboveScreen.origin.y -= bottumRightButton.origin.y+bottumRightButton.size.height;
+            button.frame = aboveScreen;
+            
+            
+            if (alreadySetupChaining)
+            {
+                [UIView animateWithDuration:CARD_SHIFT_TIME
+                                 animations:^{button.frame = [self.buttonFrames[i] CGRectValue];}
+                                 completion:^(BOOL finished) {}];
+            } else {
+                selectCardLocked = YES;
+                [UIView animateWithDuration:CARD_SHIFT_TIME
+                                 animations:^{button.frame = [self.buttonFrames[i] CGRectValue];}
+                                 completion:^(BOOL finished) {
+                                     selectCardLocked = NO;
+                                     
+                                     [self.game analyzeRows];
+                                     [self shiftRows];
+                                     [self updateUI];
+                                 }];
+                alreadySetupChaining = YES;
+            }
+            
+            [self.game cardAtIndex:i].previousIndex = i;
+            
+        }
+    }
+}
+
+#define CARD_SWAP_TIME 0.8
+
+-(void)animateSwappingFromIndex:(NSUInteger)myIndex to:(NSUInteger)otherIndex
+{
+    UIButton* myButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [self.view addSubview:myButton];
+    [self.view sendSubviewToBack:myButton];
+    [myButton setTitle:[[self.cardButtons[myIndex] titleLabel] text] forState:UIControlStateNormal];
+    myButton.titleLabel.font = [[self.cardButtons lastObject] titleLabel].font;
+    myButton.frame = [self.buttonFrames[myIndex] CGRectValue];
+    myButton.transform = CGAffineTransformMakeScale(1.0,1.0);
+    myButton.alpha = 1.0f;
+    
+    UIButton* otherButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [self.view addSubview:otherButton];
+    [self.view sendSubviewToBack:otherButton];
+    [otherButton setTitle:[[self.cardButtons[otherIndex] titleLabel] text] forState:UIControlStateNormal];
+    otherButton.titleLabel.font = [[self.cardButtons lastObject] titleLabel].font;
+    otherButton.frame = [self.buttonFrames[otherIndex] CGRectValue];
+    otherButton.transform = CGAffineTransformMakeScale(1.0,1.0);
+    otherButton.alpha = 1.0f;
+    
+    [self.cardButtons[myIndex] setAlpha:0];
+    [self.cardButtons[otherIndex] setAlpha:0];
+    
+    selectCardLocked = YES;
+    [UIView animateWithDuration:CARD_SWAP_TIME
+                     animations:^{
+                         myButton.frame = [self.buttonFrames[otherIndex] CGRectValue];
+                         otherButton.frame = [self.buttonFrames[myIndex] CGRectValue];
+                     }
+                     completion:^(BOOL finished) {
+                         selectCardLocked = NO;
+                         
+                         if (otherIndex == myIndex + 5 || otherIndex == myIndex - 5) {
+                             // kill rows
+                             [self.game analyzeTwoRowsAtIndex:MIN(myIndex, otherIndex)];
+                             [self shiftRows];
+                         } else if (otherIndex == myIndex + 1 || otherIndex == myIndex - 1) {
+                             // killl columns
+                             [self.game analyzeTwoColumnsAtIndex:MIN(myIndex, otherIndex)];
+                             [self shiftColumns];
+                         }
+                         
+                         [self.cardButtons[myIndex] setAlpha:1];
+                         [self.cardButtons[otherIndex] setAlpha:1];
+                         [myButton removeFromSuperview];
+                         [otherButton removeFromSuperview];
+                         
+                         [self updateUI];
+                     }];
+}
+
+- (IBAction)selectCard:(UIButton *)sender {
+    
+    if (!selectCardLocked)
+    {
+        NSUInteger myIndex = [self.cardButtons indexOfObject:sender];
+        NSUInteger otherIndex = [self.game selectAndSwapAtIndex:myIndex];
+        NSLog(@"myIdex: %d    otherIndex: %d",myIndex,otherIndex);
+        
+        if(otherIndex < 25) {
+            [self animateSwappingFromIndex:myIndex to:otherIndex];
+        }
+        
+        
+        [self updateUI];
+    }
+    
+    
+}
+
+
 
 @end
