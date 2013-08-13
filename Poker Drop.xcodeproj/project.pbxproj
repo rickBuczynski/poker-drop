@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19BA74C217B9E2E200EC25C9 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BA74B517B9E2E200EC25C9 /* Card.m */; };
+		19BA74C317B9E2E200EC25C9 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BA74B717B9E2E200EC25C9 /* CardMatchingGame.m */; };
+		19BA74C417B9E2E200EC25C9 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BA74B917B9E2E200EC25C9 /* Deck.m */; };
+		19BA74C517B9E2E200EC25C9 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BA74BB17B9E2E200EC25C9 /* PlayingCard.m */; };
+		19BA74C617B9E2E200EC25C9 /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BA74BD17B9E2E200EC25C9 /* PlayingCardDeck.m */; };
+		19BA74C717B9E2E200EC25C9 /* pokerEvaluator.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BA74C017B9E2E200EC25C9 /* pokerEvaluator.m */; };
+		19BA74C817B9E2E200EC25C9 /* pokerlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 19BA74C117B9E2E200EC25C9 /* pokerlib.c */; };
 		19BC720117B9BC4400F0FFE5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19BC720017B9BC4400F0FFE5 /* UIKit.framework */; };
 		19BC720317B9BC4400F0FFE5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19BC720217B9BC4400F0FFE5 /* Foundation.framework */; };
 		19BC720517B9BC4400F0FFE5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19BC720417B9BC4400F0FFE5 /* CoreGraphics.framework */; };
@@ -21,6 +28,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19BA74B317B9E2E200EC25C9 /* arrays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arrays.h; sourceTree = "<group>"; };
+		19BA74B417B9E2E200EC25C9 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		19BA74B517B9E2E200EC25C9 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		19BA74B617B9E2E200EC25C9 /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardMatchingGame.h; sourceTree = "<group>"; };
+		19BA74B717B9E2E200EC25C9 /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardMatchingGame.m; sourceTree = "<group>"; };
+		19BA74B817B9E2E200EC25C9 /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
+		19BA74B917B9E2E200EC25C9 /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
+		19BA74BA17B9E2E200EC25C9 /* PlayingCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCard.h; sourceTree = "<group>"; };
+		19BA74BB17B9E2E200EC25C9 /* PlayingCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCard.m; sourceTree = "<group>"; };
+		19BA74BC17B9E2E200EC25C9 /* PlayingCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardDeck.h; sourceTree = "<group>"; };
+		19BA74BD17B9E2E200EC25C9 /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardDeck.m; sourceTree = "<group>"; };
+		19BA74BE17B9E2E200EC25C9 /* poker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = poker.h; sourceTree = "<group>"; };
+		19BA74BF17B9E2E200EC25C9 /* pokerEvaluator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pokerEvaluator.h; sourceTree = "<group>"; };
+		19BA74C017B9E2E200EC25C9 /* pokerEvaluator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pokerEvaluator.m; sourceTree = "<group>"; };
+		19BA74C117B9E2E200EC25C9 /* pokerlib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pokerlib.c; sourceTree = "<group>"; };
 		19BC71FD17B9BC4400F0FFE5 /* Poker Drop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Poker Drop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		19BC720017B9BC4400F0FFE5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		19BC720217B9BC4400F0FFE5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -53,6 +75,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19BA74C917B9E33600EC25C9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				19BA74CA17B9E36400EC25C9 /* Poker */,
+				19BA74B417B9E2E200EC25C9 /* Card.h */,
+				19BA74B517B9E2E200EC25C9 /* Card.m */,
+				19BA74B617B9E2E200EC25C9 /* CardMatchingGame.h */,
+				19BA74B717B9E2E200EC25C9 /* CardMatchingGame.m */,
+				19BA74B817B9E2E200EC25C9 /* Deck.h */,
+				19BA74B917B9E2E200EC25C9 /* Deck.m */,
+				19BA74BA17B9E2E200EC25C9 /* PlayingCard.h */,
+				19BA74BB17B9E2E200EC25C9 /* PlayingCard.m */,
+				19BA74BC17B9E2E200EC25C9 /* PlayingCardDeck.h */,
+				19BA74BD17B9E2E200EC25C9 /* PlayingCardDeck.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		19BA74CA17B9E36400EC25C9 /* Poker */ = {
+			isa = PBXGroup;
+			children = (
+				19BA74B317B9E2E200EC25C9 /* arrays.h */,
+				19BA74BE17B9E2E200EC25C9 /* poker.h */,
+				19BA74BF17B9E2E200EC25C9 /* pokerEvaluator.h */,
+				19BA74C017B9E2E200EC25C9 /* pokerEvaluator.m */,
+				19BA74C117B9E2E200EC25C9 /* pokerlib.c */,
+			);
+			name = Poker;
+			sourceTree = "<group>";
+		};
 		19BC71F417B9BC4400F0FFE5 = {
 			isa = PBXGroup;
 			children = (
@@ -83,8 +135,7 @@
 		19BC720617B9BC4400F0FFE5 /* Poker Drop */ = {
 			isa = PBXGroup;
 			children = (
-				19BC720F17B9BC4400F0FFE5 /* PokerDropAppDelegate.h */,
-				19BC721017B9BC4400F0FFE5 /* PokerDropAppDelegate.m */,
+				19BA74C917B9E33600EC25C9 /* Model */,
 				19BC721817B9BC4400F0FFE5 /* MainStoryboard.storyboard */,
 				19BC721B17B9BC4400F0FFE5 /* PokerDropViewController.h */,
 				19BC721C17B9BC4400F0FFE5 /* PokerDropViewController.m */,
@@ -96,6 +147,8 @@
 		19BC720717B9BC4400F0FFE5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				19BC721017B9BC4400F0FFE5 /* PokerDropAppDelegate.m */,
+				19BC720F17B9BC4400F0FFE5 /* PokerDropAppDelegate.h */,
 				19BC720817B9BC4400F0FFE5 /* Poker Drop-Info.plist */,
 				19BC720917B9BC4400F0FFE5 /* InfoPlist.strings */,
 				19BC720C17B9BC4400F0FFE5 /* main.m */,
@@ -177,6 +230,13 @@
 				19BC720D17B9BC4400F0FFE5 /* main.m in Sources */,
 				19BC721117B9BC4400F0FFE5 /* PokerDropAppDelegate.m in Sources */,
 				19BC721D17B9BC4400F0FFE5 /* PokerDropViewController.m in Sources */,
+				19BA74C217B9E2E200EC25C9 /* Card.m in Sources */,
+				19BA74C317B9E2E200EC25C9 /* CardMatchingGame.m in Sources */,
+				19BA74C417B9E2E200EC25C9 /* Deck.m in Sources */,
+				19BA74C517B9E2E200EC25C9 /* PlayingCard.m in Sources */,
+				19BA74C617B9E2E200EC25C9 /* PlayingCardDeck.m in Sources */,
+				19BA74C717B9E2E200EC25C9 /* pokerEvaluator.m in Sources */,
+				19BA74C817B9E2E200EC25C9 /* pokerlib.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +359,7 @@
 				19BC722217B9BC4400F0FFE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
