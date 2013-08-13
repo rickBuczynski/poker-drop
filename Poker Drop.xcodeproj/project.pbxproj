@@ -1,0 +1,306 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		19BC720117B9BC4400F0FFE5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19BC720017B9BC4400F0FFE5 /* UIKit.framework */; };
+		19BC720317B9BC4400F0FFE5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19BC720217B9BC4400F0FFE5 /* Foundation.framework */; };
+		19BC720517B9BC4400F0FFE5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19BC720417B9BC4400F0FFE5 /* CoreGraphics.framework */; };
+		19BC720B17B9BC4400F0FFE5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19BC720917B9BC4400F0FFE5 /* InfoPlist.strings */; };
+		19BC720D17B9BC4400F0FFE5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BC720C17B9BC4400F0FFE5 /* main.m */; };
+		19BC721117B9BC4400F0FFE5 /* PokerDropAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BC721017B9BC4400F0FFE5 /* PokerDropAppDelegate.m */; };
+		19BC721317B9BC4400F0FFE5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 19BC721217B9BC4400F0FFE5 /* Default.png */; };
+		19BC721517B9BC4400F0FFE5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19BC721417B9BC4400F0FFE5 /* Default@2x.png */; };
+		19BC721717B9BC4400F0FFE5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19BC721617B9BC4400F0FFE5 /* Default-568h@2x.png */; };
+		19BC721A17B9BC4400F0FFE5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19BC721817B9BC4400F0FFE5 /* MainStoryboard.storyboard */; };
+		19BC721D17B9BC4400F0FFE5 /* PokerDropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BC721C17B9BC4400F0FFE5 /* PokerDropViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		19BC71FD17B9BC4400F0FFE5 /* Poker Drop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Poker Drop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		19BC720017B9BC4400F0FFE5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		19BC720217B9BC4400F0FFE5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		19BC720417B9BC4400F0FFE5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		19BC720817B9BC4400F0FFE5 /* Poker Drop-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Poker Drop-Info.plist"; sourceTree = "<group>"; };
+		19BC720A17B9BC4400F0FFE5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		19BC720C17B9BC4400F0FFE5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		19BC720E17B9BC4400F0FFE5 /* Poker Drop-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Poker Drop-Prefix.pch"; sourceTree = "<group>"; };
+		19BC720F17B9BC4400F0FFE5 /* PokerDropAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokerDropAppDelegate.h; sourceTree = "<group>"; };
+		19BC721017B9BC4400F0FFE5 /* PokerDropAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokerDropAppDelegate.m; sourceTree = "<group>"; };
+		19BC721217B9BC4400F0FFE5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		19BC721417B9BC4400F0FFE5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		19BC721617B9BC4400F0FFE5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		19BC721917B9BC4400F0FFE5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		19BC721B17B9BC4400F0FFE5 /* PokerDropViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokerDropViewController.h; sourceTree = "<group>"; };
+		19BC721C17B9BC4400F0FFE5 /* PokerDropViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokerDropViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		19BC71FA17B9BC4400F0FFE5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19BC720117B9BC4400F0FFE5 /* UIKit.framework in Frameworks */,
+				19BC720317B9BC4400F0FFE5 /* Foundation.framework in Frameworks */,
+				19BC720517B9BC4400F0FFE5 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19BC71F417B9BC4400F0FFE5 = {
+			isa = PBXGroup;
+			children = (
+				19BC720617B9BC4400F0FFE5 /* Poker Drop */,
+				19BC71FF17B9BC4400F0FFE5 /* Frameworks */,
+				19BC71FE17B9BC4400F0FFE5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		19BC71FE17B9BC4400F0FFE5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				19BC71FD17B9BC4400F0FFE5 /* Poker Drop.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		19BC71FF17B9BC4400F0FFE5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				19BC720017B9BC4400F0FFE5 /* UIKit.framework */,
+				19BC720217B9BC4400F0FFE5 /* Foundation.framework */,
+				19BC720417B9BC4400F0FFE5 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		19BC720617B9BC4400F0FFE5 /* Poker Drop */ = {
+			isa = PBXGroup;
+			children = (
+				19BC720F17B9BC4400F0FFE5 /* PokerDropAppDelegate.h */,
+				19BC721017B9BC4400F0FFE5 /* PokerDropAppDelegate.m */,
+				19BC721817B9BC4400F0FFE5 /* MainStoryboard.storyboard */,
+				19BC721B17B9BC4400F0FFE5 /* PokerDropViewController.h */,
+				19BC721C17B9BC4400F0FFE5 /* PokerDropViewController.m */,
+				19BC720717B9BC4400F0FFE5 /* Supporting Files */,
+			);
+			path = "Poker Drop";
+			sourceTree = "<group>";
+		};
+		19BC720717B9BC4400F0FFE5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				19BC720817B9BC4400F0FFE5 /* Poker Drop-Info.plist */,
+				19BC720917B9BC4400F0FFE5 /* InfoPlist.strings */,
+				19BC720C17B9BC4400F0FFE5 /* main.m */,
+				19BC720E17B9BC4400F0FFE5 /* Poker Drop-Prefix.pch */,
+				19BC721217B9BC4400F0FFE5 /* Default.png */,
+				19BC721417B9BC4400F0FFE5 /* Default@2x.png */,
+				19BC721617B9BC4400F0FFE5 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		19BC71FC17B9BC4400F0FFE5 /* Poker Drop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19BC722017B9BC4400F0FFE5 /* Build configuration list for PBXNativeTarget "Poker Drop" */;
+			buildPhases = (
+				19BC71F917B9BC4400F0FFE5 /* Sources */,
+				19BC71FA17B9BC4400F0FFE5 /* Frameworks */,
+				19BC71FB17B9BC4400F0FFE5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Poker Drop";
+			productName = "Poker Drop";
+			productReference = 19BC71FD17B9BC4400F0FFE5 /* Poker Drop.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		19BC71F517B9BC4400F0FFE5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PokerDrop;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Rick Buczynski";
+			};
+			buildConfigurationList = 19BC71F817B9BC4400F0FFE5 /* Build configuration list for PBXProject "Poker Drop" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 19BC71F417B9BC4400F0FFE5;
+			productRefGroup = 19BC71FE17B9BC4400F0FFE5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				19BC71FC17B9BC4400F0FFE5 /* Poker Drop */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		19BC71FB17B9BC4400F0FFE5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19BC720B17B9BC4400F0FFE5 /* InfoPlist.strings in Resources */,
+				19BC721317B9BC4400F0FFE5 /* Default.png in Resources */,
+				19BC721517B9BC4400F0FFE5 /* Default@2x.png in Resources */,
+				19BC721717B9BC4400F0FFE5 /* Default-568h@2x.png in Resources */,
+				19BC721A17B9BC4400F0FFE5 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		19BC71F917B9BC4400F0FFE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19BC720D17B9BC4400F0FFE5 /* main.m in Sources */,
+				19BC721117B9BC4400F0FFE5 /* PokerDropAppDelegate.m in Sources */,
+				19BC721D17B9BC4400F0FFE5 /* PokerDropViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		19BC720917B9BC4400F0FFE5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19BC720A17B9BC4400F0FFE5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		19BC721817B9BC4400F0FFE5 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19BC721917B9BC4400F0FFE5 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		19BC721E17B9BC4400F0FFE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		19BC721F17B9BC4400F0FFE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		19BC722117B9BC4400F0FFE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Poker Drop/Poker Drop-Prefix.pch";
+				INFOPLIST_FILE = "Poker Drop/Poker Drop-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		19BC722217B9BC4400F0FFE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Poker Drop/Poker Drop-Prefix.pch";
+				INFOPLIST_FILE = "Poker Drop/Poker Drop-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		19BC71F817B9BC4400F0FFE5 /* Build configuration list for PBXProject "Poker Drop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19BC721E17B9BC4400F0FFE5 /* Debug */,
+				19BC721F17B9BC4400F0FFE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19BC722017B9BC4400F0FFE5 /* Build configuration list for PBXNativeTarget "Poker Drop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19BC722117B9BC4400F0FFE5 /* Debug */,
+				19BC722217B9BC4400F0FFE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 19BC71F517B9BC4400F0FFE5 /* Project object */;
+}
