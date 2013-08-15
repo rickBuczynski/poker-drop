@@ -423,7 +423,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="243" y="144"/>
+            <point key="canvasLocation" x="-416" y="82"/>
         </scene>
     </scenes>
     <classes>
@@ -431,7 +431,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PokerDropViewController.h"/>
             <relationships>
                 <relationship kind="action" name="selectCard:" candidateClass="UIButton"/>
-                <relationship kind="action" name="switchMode:" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="highScoreLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="scoreLael" candidateClass="UILabel"/>
                 <relationship kind="outletCollection" name="cardButtons" candidateClass="UIButton"/>
