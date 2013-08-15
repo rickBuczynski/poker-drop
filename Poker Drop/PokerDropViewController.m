@@ -113,6 +113,8 @@ BOOL selectCardLocked = NO;
         [cardButton setTitle:card.contents forState:UIControlStateNormal];
         [cardButton setTitle:card.contents forState:UIControlStateSelected];
         
+        [self setTextColorForButton:cardButton];
+        
         cardButton.selected = card.isSwapable;
         if (card.isSwapable) {
             int selectedIndex = [self.cardButtons indexOfObject:cardButton];
@@ -217,6 +219,8 @@ BOOL selectCardLocked = NO;
     fadeButton.frame = [self.buttonFrames[index] CGRectValue];
     fadeButton.transform = CGAffineTransformMakeScale(1.0,1.0);
     fadeButton.alpha = 1.0f;
+    
+    [self setTextColorForButton:fadeButton];
     
     [UIView animateWithDuration:CARD_FADE_TIME
                      animations:^{fadeButton.alpha = 0.0f;fadeButton.transform = CGAffineTransformMakeScale(0.0,0.0);}
@@ -398,6 +402,18 @@ BOOL selectCardLocked = NO;
     }
 }
 
+-(void)setTextColorForButton:(UIButton*)button
+{
+    NSString* contents = button.titleLabel.text;
+    if ([contents rangeOfString:@"♥"].location != NSNotFound || [contents rangeOfString:@"♦"].location != NSNotFound) {
+        [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+    } else {
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
+    }
+}
+
 #define CARD_SWAP_TIME 0.8
 
 -(void)animateSwappingFromIndex:(NSUInteger)myIndex to:(NSUInteger)otherIndex
@@ -419,6 +435,9 @@ BOOL selectCardLocked = NO;
     otherButton.frame = [self.buttonFrames[otherIndex] CGRectValue];
     otherButton.transform = CGAffineTransformMakeScale(1.0,1.0);
     otherButton.alpha = 1.0f;
+    
+    [self setTextColorForButton:myButton];
+    [self setTextColorForButton:otherButton];
     
     [self.cardButtons[myIndex] setAlpha:0];
     [self.cardButtons[otherIndex] setAlpha:0];
