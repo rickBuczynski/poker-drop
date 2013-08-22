@@ -290,6 +290,33 @@
     [self.deck addCard:card atTop:YES];
 }
 
+-(NSString *)getScoreFromHandName:(NSString *)handType
+{
+    
+    NSUInteger handScore = 0;
+    if ([handType isEqualToString:@"Royal Flush"]) {
+        handScore = 800;
+    } else if ([handType isEqualToString:@"Straight Flush"]) {
+        handScore = 50;
+    } else if ([handType isEqualToString:@"Four of a Kind"]) {
+        handScore = 25;
+    } else if ([handType isEqualToString:@"Full House"]) {
+        handScore=9;
+    } else if ([handType isEqualToString:@"Flush"]) {
+        handScore=6;
+    } else if ([handType isEqualToString:@"Straight"]) {
+        handScore=4;
+    } else if ([handType isEqualToString:@"Three of a Kind"]) {
+        handScore=3;
+    } else if ([handType isEqualToString:@"Two Pair"]) {
+        handScore=2;
+    } else if ([handType isEqualToString:@"One Pair"]) {
+        handScore=1;
+    }
+    
+    return [NSString stringWithFormat:@"    +%d",handScore];
+}
+
 
 -(NSString *)getHandNameFromHand:(NSArray *)hand
 {
@@ -299,6 +326,13 @@
     } else {
         return [self.pokerHandEvaluator pokerHandfromCards:hand];
     }
+}
+
+-(NSString *)getHandNameWithScoreFromHand:(NSArray *)hand
+{
+    NSString* handNameWithScore = [self getHandNameFromHand:hand];
+    handNameWithScore = [handNameWithScore stringByAppendingString:[self getScoreFromHandName:[self getHandNameFromHand:hand]]];
+    return handNameWithScore;
 }
 
 -(void)analyzeRows
@@ -311,7 +345,7 @@
         NSArray* hand = [self.cards subarrayWithRange:handRange];
         
         if ([self isGoodPokerHandChain:hand]) {
-            [self killRowAtIndex:i withHandName:[self getHandNameFromHand:hand]];
+            [self killRowAtIndex:i withHandName:[self getHandNameWithScoreFromHand:hand]];
         }
     }
     
@@ -324,7 +358,7 @@
         NSArray* hand =  @[self.cards[i],self.cards[i+5],self.cards[i+10],self.cards[i+15],self.cards[i+20]];
         
         if ([self isGoodPokerHandChain:hand]) {
-            [self killColumnAtIndex:i withHandName:[self getHandNameFromHand:hand]];
+            [self killColumnAtIndex:i withHandName:[self getHandNameWithScoreFromHand:hand]];
         }
     }
     
@@ -342,7 +376,7 @@
         NSArray* hand = [self.cards subarrayWithRange:handRange];
         
         if ([self isGoodPokerHand:hand]) {
-            [self killRowAtIndex:i withHandName:[self getHandNameFromHand:hand]];
+            [self killRowAtIndex:i withHandName:[self getHandNameWithScoreFromHand:hand]];
         }
     }
     
@@ -358,7 +392,7 @@
         NSArray* hand =  @[self.cards[i],self.cards[i+5],self.cards[i+10],self.cards[i+15],self.cards[i+20]];
         
         if ([self isGoodPokerHand:hand]) {
-            [self killColumnAtIndex:i withHandName:[self getHandNameFromHand:hand]];
+            [self killColumnAtIndex:i withHandName:[self getHandNameWithScoreFromHand:hand]];
         }
     }
     
