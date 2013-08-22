@@ -246,6 +246,7 @@ BOOL selectCardLocked = NO;
     fadingText.alpha = 1.0f;
     fadingText.backgroundColor = [UIColor clearColor];
     fadingText.font = [[self.cardButtons lastObject] titleLabel].font;
+    fadingText.textColor = [UIColor greenColor];
     
     [UIView animateWithDuration:CARD_FADE_TIME
                      animations:^{
@@ -280,6 +281,7 @@ BOOL selectCardLocked = NO;
     fadingText.alpha = 1.0f;
     fadingText.backgroundColor = [UIColor clearColor];
     fadingText.font = [[self.cardButtons lastObject] titleLabel].font;
+    fadingText.textColor = [UIColor greenColor];
     
     [fadingText setTransform:CGAffineTransformMakeRotation(-M_PI / 2)];
     
@@ -416,8 +418,36 @@ BOOL selectCardLocked = NO;
 
 #define CARD_SWAP_TIME 0.8
 
+-(void)fadePenaltyForSwappingFromIndex:(NSUInteger)myIndex to:(NSUInteger)otherIndex
+{
+    UILabel* fadingText = [[UILabel alloc] init];
+    [self.view addSubview:fadingText];
+    [self.view bringSubviewToFront:fadingText];
+    
+    fadingText.text = @"-3";
+    fadingText.textColor = [UIColor redColor];
+    
+    CGRect myFrame = [self.buttonFrames[myIndex] CGRectValue];
+    myFrame.origin.x = (myFrame.origin.x + [self.buttonFrames[otherIndex] CGRectValue].origin.x)/2;
+    myFrame.origin.y = (myFrame.origin.y + [self.buttonFrames[otherIndex] CGRectValue].origin.y)/2;
+    
+    fadingText.frame = myFrame;
+    fadingText.textAlignment = NSTextAlignmentCenter;
+    fadingText.alpha = 1.0f;
+    fadingText.backgroundColor = [UIColor clearColor];
+    
+    [UIView animateWithDuration:CARD_SWAP_TIME*0.6
+                     animations:^{
+                         fadingText.alpha = 0.0f;
+                         //fadingText.transform = CGAffineTransformMakeScale(0.0,0.0);
+                     }
+                     completion:^(BOOL finished){ [fadingText removeFromSuperview]; }];
+}
+
 -(void)animateSwappingFromIndex:(NSUInteger)myIndex to:(NSUInteger)otherIndex
 {
+    [self fadePenaltyForSwappingFromIndex:myIndex to:otherIndex];
+    
     UIButton* myButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.view addSubview:myButton];
     [self.view sendSubviewToBack:myButton];
