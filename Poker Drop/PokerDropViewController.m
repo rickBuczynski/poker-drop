@@ -27,6 +27,25 @@
 
 BOOL selectCardLocked = NO;
 
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+    NSLog(@"asdasdasd");
+    
+    for (UIButton *button in self.cardButtons)
+    {
+        [self.view sendSubviewToBack:button];
+        
+        [self.buttonFrames insertObject:[[NSValue valueWithCGRect:button.frame] copy] atIndex:[self.cardButtons indexOfObject:button]];
+    }
+    
+}
+
 - (IBAction)reDeal {
     [self.game dealWithCardCount:self.cardButtons.count usingDeck:[[PlayingCardDeck alloc] init]];
     [self updateUI];
