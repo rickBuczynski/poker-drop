@@ -87,9 +87,9 @@ BOOL selectCardLocked = NO;
     }];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewDidLoad
 {
-    [super viewDidAppear:animated];
+    [super viewDidLoad];
     
     [self sortCardButtons];
     
