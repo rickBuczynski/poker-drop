@@ -26,16 +26,24 @@
 @implementation PokerDropViewController
 
 BOOL selectCardLocked = NO;
+BOOL deviceIsRotating = NO;
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
+    deviceIsRotating = YES;
+    selectCardLocked = YES;
+    
+    for (UIButton* cardButton in self.cardButtons)
+    {
+        [cardButton.layer removeAllAnimations];
+    }
+    
     [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
     [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
-    NSLog(@"asdasdasd");
     
     for (UIButton *button in self.cardButtons)
     {
@@ -43,6 +51,9 @@ BOOL selectCardLocked = NO;
         
         [self.buttonFrames insertObject:[[NSValue valueWithCGRect:button.frame] copy] atIndex:[self.cardButtons indexOfObject:button]];
     }
+    
+    deviceIsRotating = NO;
+    selectCardLocked = NO;
     
 }
 
@@ -357,10 +368,13 @@ BOOL selectCardLocked = NO;
                 [UIView animateWithDuration:CARD_SHIFT_TIME
                                  animations:^{button.frame = [self.buttonFrames[i] CGRectValue];}
                                  completion:^(BOOL finished) {
-                                     selectCardLocked = NO;
-                                     [self.game analyzeColumns];
-                                     [self shiftColumns];
-                                     [self updateUI];
+                                     if(!deviceIsRotating)
+                                     {
+                                         selectCardLocked = NO;
+                                         [self.game analyzeColumns];
+                                         [self shiftColumns];
+                                         [self updateUI];
+                                     }
                                  }];
                 alreadySetupChaining = YES;
             }
@@ -408,11 +422,13 @@ BOOL selectCardLocked = NO;
                 [UIView animateWithDuration:CARD_SHIFT_TIME
                                  animations:^{button.frame = [self.buttonFrames[i] CGRectValue];}
                                  completion:^(BOOL finished) {
-                                     selectCardLocked = NO;
-                                     
-                                     [self.game analyzeRows];
-                                     [self shiftRows];
-                                     [self updateUI];
+                                     if(!deviceIsRotating)
+                                     {
+                                         selectCardLocked = NO;
+                                         [self.game analyzeRows];
+                                         [self shiftRows];
+                                         [self updateUI];
+                                     }
                                  }];
                 alreadySetupChaining = YES;
             }
@@ -498,16 +514,20 @@ BOOL selectCardLocked = NO;
                          otherButton.frame = [self.buttonFrames[myIndex] CGRectValue];
                      }
                      completion:^(BOOL finished) {
-                         selectCardLocked = NO;
                          
-                         if (otherIndex == myIndex + 5 || otherIndex == myIndex - 5) {
-                             // kill rows
-                             [self.game analyzeTwoRowsAtIndex:MIN(myIndex, otherIndex)];
-                             [self shiftRows];
-                         } else if (otherIndex == myIndex + 1 || otherIndex == myIndex - 1) {
-                             // killl columns
-                             [self.game analyzeTwoColumnsAtIndex:MIN(myIndex, otherIndex)];
-                             [self shiftColumns];
+                         if (!deviceIsRotating)
+                         {
+                             selectCardLocked = NO;
+                             
+                             if (otherIndex == myIndex + 5 || otherIndex == myIndex - 5) {
+                                 // kill rows
+                                 [self.game analyzeTwoRowsAtIndex:MIN(myIndex, otherIndex)];
+                                 [self shiftRows];
+                             } else if (otherIndex == myIndex + 1 || otherIndex == myIndex - 1) {
+                                 // killl columns
+                                 [self.game analyzeTwoColumnsAtIndex:MIN(myIndex, otherIndex)];
+                                 [self shiftColumns];
+                             }
                          }
                          
                          [self.cardButtons[myIndex] setAlpha:1];
@@ -525,7 +545,7 @@ BOOL selectCardLocked = NO;
     {
         NSUInteger myIndex = [self.cardButtons indexOfObject:sender];
         NSUInteger otherIndex = [self.game selectAndSwapAtIndex:myIndex];
-        NSLog(@"myIdex: %d    otherIndex: %d",myIndex,otherIndex);
+        //NSLog(@"myIdex: %d    otherIndex: %d",myIndex,otherIndex);
         
         if(otherIndex < 25) {
             [self animateSwappingFromIndex:myIndex to:otherIndex];
