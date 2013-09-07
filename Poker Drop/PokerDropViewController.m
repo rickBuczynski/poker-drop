@@ -57,9 +57,28 @@ BOOL deviceIsRotating = NO;
     
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if(buttonIndex == 0) {
+        // chose yes
+        [self.game dealWithCardCount:self.cardButtons.count usingDeck:[[PlayingCardDeck alloc] init]];
+        [self updateUI];
+    } else if(buttonIndex == 1) {
+        /// chose no
+    }
+}
+
 - (IBAction)reDeal {
-    [self.game dealWithCardCount:self.cardButtons.count usingDeck:[[PlayingCardDeck alloc] init]];
-    [self updateUI];
+    if(!selectCardLocked && !deviceIsRotating)
+    {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"New Game"
+                              message:@"Do you want to reset your game?"
+                              delegate: self
+                              cancelButtonTitle:@"Yes"
+                              otherButtonTitles:@"No", nil];
+        [alert show];
+    }
 }
 
 
