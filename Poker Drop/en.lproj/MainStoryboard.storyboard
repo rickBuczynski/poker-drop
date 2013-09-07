@@ -13,19 +13,20 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="HIGHSCORE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nR4-4W-ia4">
-                                <rect key="frame" x="20" y="478" width="108" height="21"/>
+                                <rect key="frame" x="46" y="475" width="146" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="SCORE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eMn-kE-cAy">
-                                <rect key="frame" x="20" y="507" width="107" height="21"/>
+                                <rect key="frame" x="46" y="505" width="146" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ng6-9X-m3J">
-                                <rect key="frame" x="220" y="484" width="80" height="45"/>
+                                <rect key="frame" x="185" y="482" width="96" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                 <state key="normal" title="New Game">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -39,7 +40,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Dvs-O9-PCs">
-                                <rect key="frame" x="20" y="20" width="50" height="83"/>
+                                <rect key="frame" x="20" y="20" width="50" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="10♣">
@@ -53,8 +54,8 @@
                                     <action selector="selectCard:" destination="2" eventType="touchUpInside" id="9DI-f8-EBv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="D9P-Yv-6tL">
-                                <rect key="frame" x="250" y="20" width="50" height="83"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="a8Q-lG-CrU">
+                                <rect key="frame" x="250" y="20" width="50" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="10♣">
@@ -65,11 +66,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="zmc-lu-Rd8"/>
+                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="t4n-0S-STK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SWB-ev-HBN">
-                                <rect key="frame" x="135" y="20" width="50" height="83"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0wz-5F-ve4">
+                                <rect key="frame" x="135" y="20" width="50" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="10♣">
@@ -80,11 +81,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="vx8-Tp-IAo"/>
+                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="FSh-Kb-xYd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bbm-F7-SIc">
-                                <rect key="frame" x="78" y="20" width="50" height="83"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tv1-Tf-C3s">
+                                <rect key="frame" x="78" y="20" width="50" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="10♣">
@@ -95,11 +96,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="F9K-k8-TrR"/>
+                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="iJc-AU-JdP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xcJ-ho-OSm">
-                                <rect key="frame" x="192" y="20" width="50" height="83"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1FU-m2-kc1">
+                                <rect key="frame" x="192" y="20" width="50" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="10♣">
@@ -110,11 +111,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="nWo-vE-e9T"/>
+                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="bBr-4g-Ml5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TlH-aW-Zpz">
-                                <rect key="frame" x="20" y="110" width="50" height="83"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dra-Bd-Uh8">
+                                <rect key="frame" x="20" y="106" width="50" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="10♣">
@@ -125,11 +126,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="qsK-ja-eU5"/>
+                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="DW8-1J-fX2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nYL-lM-wyK">
-                                <rect key="frame" x="250" y="110" width="50" height="83"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SkI-II-ask">
+                                <rect key="frame" x="250" y="106" width="50" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="10♣">
@@ -140,11 +141,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="fqU-yT-5jg"/>
+                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="Wf0-ZX-tQH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8y7-7h-k0w">
-                                <rect key="frame" x="135" y="110" width="50" height="83"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hJ6-Ae-0r7">
+                                <rect key="frame" x="135" y="106" width="50" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="10♣">
@@ -155,11 +156,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="alH-Pp-d6Y"/>
+                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="zjl-49-h56"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dsO-nr-bNy">
-                                <rect key="frame" x="78" y="110" width="50" height="83"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jla-hy-f5e">
+                                <rect key="frame" x="78" y="106" width="50" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="10♣">
@@ -170,11 +171,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="3LF-qo-lQb"/>
+                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="4Nc-o7-EIP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NuV-AG-ym9">
-                                <rect key="frame" x="192" y="110" width="50" height="83"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RNN-SQ-jBO">
+                                <rect key="frame" x="192" y="106" width="50" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="10♣">
@@ -185,11 +186,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="x7Z-Mg-5tp"/>
+                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="ftK-nU-Na8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Nex-Z9-UMV">
-                                <rect key="frame" x="20" y="200" width="50" height="83"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LiZ-Ue-qdN">
+                                <rect key="frame" x="20" y="192" width="50" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="10♣">
@@ -200,11 +201,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="VZs-v8-2p6"/>
+                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="xE6-iu-RBo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FSf-QS-8kj">
-                                <rect key="frame" x="250" y="200" width="50" height="83"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="J2c-bJ-dSt">
+                                <rect key="frame" x="250" y="192" width="50" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="10♣">
@@ -215,11 +216,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="J8c-xy-ZtG"/>
+                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="gZB-ph-JVZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DBd-6E-zXd">
-                                <rect key="frame" x="135" y="200" width="50" height="83"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jzK-Bn-D9J">
+                                <rect key="frame" x="135" y="192" width="50" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="10♣">
@@ -230,11 +231,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="y9d-as-BgX"/>
+                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="UHe-Kv-7cH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3qk-2R-phf">
-                                <rect key="frame" x="78" y="200" width="50" height="83"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7CG-Ze-YCH">
+                                <rect key="frame" x="78" y="192" width="50" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="10♣">
@@ -245,11 +246,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="Eni-oI-BQw"/>
+                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="Bg1-HC-F4B"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AoH-J2-Ukc">
-                                <rect key="frame" x="192" y="200" width="50" height="83"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zMD-In-T74">
+                                <rect key="frame" x="192" y="192" width="50" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="10♣">
@@ -260,11 +261,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="HMd-cq-Izy"/>
+                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="DNX-v0-xPR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SwJ-hx-6CJ">
-                                <rect key="frame" x="20" y="290" width="50" height="83"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MkY-yk-Icc">
+                                <rect key="frame" x="20" y="278" width="50" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="10♣">
@@ -275,11 +276,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="4Ek-x6-n4z"/>
+                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="kqH-4m-E5D"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AVk-Z8-Ygz">
-                                <rect key="frame" x="250" y="290" width="50" height="83"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9bc-mq-nfI">
+                                <rect key="frame" x="250" y="278" width="50" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="10♣">
@@ -290,11 +291,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="Ika-0N-R5Q"/>
+                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="PUI-9w-OZe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dtA-5u-GFf">
-                                <rect key="frame" x="135" y="290" width="50" height="83"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="a76-5d-0yZ">
+                                <rect key="frame" x="135" y="278" width="50" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="10♣">
@@ -305,11 +306,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="4e3-tr-B1G"/>
+                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="9ms-cU-hlh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ui9-yJ-m5D">
-                                <rect key="frame" x="78" y="290" width="50" height="83"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GNN-wQ-tdN">
+                                <rect key="frame" x="78" y="278" width="50" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="10♣">
@@ -320,11 +321,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="jgz-gD-xPZ"/>
+                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="zra-8Y-9j7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fCc-j5-kpO">
-                                <rect key="frame" x="192" y="290" width="50" height="83"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vyr-cH-d1m">
+                                <rect key="frame" x="192" y="278" width="50" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="10♣">
@@ -335,11 +336,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="AsC-v7-2WP"/>
+                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="z64-pR-QIP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="52j-wC-kkg">
-                                <rect key="frame" x="20" y="380" width="50" height="83"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="e4K-tN-okX">
+                                <rect key="frame" x="20" y="364" width="50" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="10♣">
@@ -350,11 +351,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="MRB-8Y-heB"/>
+                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="M5v-i7-Ry9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3A9-59-qGj">
-                                <rect key="frame" x="250" y="380" width="50" height="83"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zq0-hJ-XVF">
+                                <rect key="frame" x="250" y="364" width="50" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="10♣">
@@ -365,11 +366,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="fE6-0A-fYb"/>
+                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="Di6-9p-d3q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FeF-sh-1pD">
-                                <rect key="frame" x="135" y="380" width="50" height="83"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4LT-vE-5Qz">
+                                <rect key="frame" x="135" y="364" width="50" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="10♣">
@@ -380,11 +381,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="D6A-c0-38p"/>
+                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="gNR-EM-hki"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cl2-9c-l7t">
-                                <rect key="frame" x="78" y="380" width="50" height="83"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ugD-dn-hFU">
+                                <rect key="frame" x="78" y="364" width="50" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="10♣">
@@ -395,11 +396,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="hmp-EA-qP7"/>
+                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="3cu-je-0AF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Vwm-UE-exy">
-                                <rect key="frame" x="192" y="380" width="50" height="83"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2gW-sR-aXr">
+                                <rect key="frame" x="192" y="364" width="50" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="10♣">
@@ -410,7 +411,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="kW0-T1-43F"/>
+                                    <action selector="selectCard:" destination="2" eventType="touchUpInside" id="zVu-V1-B2i"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -420,30 +421,30 @@
                         <outlet property="highScoreLabel" destination="nR4-4W-ia4" id="Dkf-vw-3Pv"/>
                         <outlet property="scoreLael" destination="eMn-kE-cAy" id="zUq-tA-bE1"/>
                         <outletCollection property="cardButtons" destination="Dvs-O9-PCs" id="PQV-bV-LQv"/>
-                        <outletCollection property="cardButtons" destination="bbm-F7-SIc" id="WVe-Lo-xtr"/>
-                        <outletCollection property="cardButtons" destination="SWB-ev-HBN" id="F2L-Zg-uAg"/>
-                        <outletCollection property="cardButtons" destination="xcJ-ho-OSm" id="jQh-mm-5I4"/>
-                        <outletCollection property="cardButtons" destination="D9P-Yv-6tL" id="VJD-pw-wbV"/>
-                        <outletCollection property="cardButtons" destination="TlH-aW-Zpz" id="0ec-n5-XIX"/>
-                        <outletCollection property="cardButtons" destination="dsO-nr-bNy" id="jcd-VA-hJl"/>
-                        <outletCollection property="cardButtons" destination="8y7-7h-k0w" id="6ph-Wi-K1u"/>
-                        <outletCollection property="cardButtons" destination="NuV-AG-ym9" id="Avg-y2-3Sh"/>
-                        <outletCollection property="cardButtons" destination="nYL-lM-wyK" id="h7r-pZ-cHK"/>
-                        <outletCollection property="cardButtons" destination="Nex-Z9-UMV" id="TTU-vR-ltu"/>
-                        <outletCollection property="cardButtons" destination="3qk-2R-phf" id="FAG-GB-ler"/>
-                        <outletCollection property="cardButtons" destination="DBd-6E-zXd" id="EQ4-rD-KmQ"/>
-                        <outletCollection property="cardButtons" destination="AoH-J2-Ukc" id="T2t-ZE-mW6"/>
-                        <outletCollection property="cardButtons" destination="FSf-QS-8kj" id="Axu-8J-lMr"/>
-                        <outletCollection property="cardButtons" destination="SwJ-hx-6CJ" id="e3b-Wp-RhM"/>
-                        <outletCollection property="cardButtons" destination="Ui9-yJ-m5D" id="oFt-Qh-uPz"/>
-                        <outletCollection property="cardButtons" destination="dtA-5u-GFf" id="5Jb-1S-PlD"/>
-                        <outletCollection property="cardButtons" destination="fCc-j5-kpO" id="nA2-US-v9A"/>
-                        <outletCollection property="cardButtons" destination="AVk-Z8-Ygz" id="CfB-E4-YCs"/>
-                        <outletCollection property="cardButtons" destination="52j-wC-kkg" id="JN7-5n-d6K"/>
-                        <outletCollection property="cardButtons" destination="cl2-9c-l7t" id="X7P-fj-EFZ"/>
-                        <outletCollection property="cardButtons" destination="FeF-sh-1pD" id="GLK-V0-3pZ"/>
-                        <outletCollection property="cardButtons" destination="Vwm-UE-exy" id="dYf-qL-Bvh"/>
-                        <outletCollection property="cardButtons" destination="3A9-59-qGj" id="eNO-tL-BXc"/>
+                        <outletCollection property="cardButtons" destination="tv1-Tf-C3s" id="RDs-cX-fEw"/>
+                        <outletCollection property="cardButtons" destination="0wz-5F-ve4" id="eXn-8t-jzS"/>
+                        <outletCollection property="cardButtons" destination="1FU-m2-kc1" id="bA1-Cp-wT0"/>
+                        <outletCollection property="cardButtons" destination="a8Q-lG-CrU" id="lD4-Iz-x0B"/>
+                        <outletCollection property="cardButtons" destination="SkI-II-ask" id="A3S-Bk-ASm"/>
+                        <outletCollection property="cardButtons" destination="RNN-SQ-jBO" id="HzQ-Or-9se"/>
+                        <outletCollection property="cardButtons" destination="hJ6-Ae-0r7" id="yS4-Gm-tjG"/>
+                        <outletCollection property="cardButtons" destination="jla-hy-f5e" id="02D-QU-I4h"/>
+                        <outletCollection property="cardButtons" destination="dra-Bd-Uh8" id="uLP-HA-QcD"/>
+                        <outletCollection property="cardButtons" destination="LiZ-Ue-qdN" id="yCt-b4-Jmb"/>
+                        <outletCollection property="cardButtons" destination="7CG-Ze-YCH" id="BLD-rp-Sze"/>
+                        <outletCollection property="cardButtons" destination="jzK-Bn-D9J" id="EWG-qW-6ax"/>
+                        <outletCollection property="cardButtons" destination="zMD-In-T74" id="kWn-mZ-hME"/>
+                        <outletCollection property="cardButtons" destination="J2c-bJ-dSt" id="YCL-4y-iS1"/>
+                        <outletCollection property="cardButtons" destination="MkY-yk-Icc" id="t1n-lc-ofQ"/>
+                        <outletCollection property="cardButtons" destination="GNN-wQ-tdN" id="Nw6-6f-H5R"/>
+                        <outletCollection property="cardButtons" destination="a76-5d-0yZ" id="owx-0Q-S8I"/>
+                        <outletCollection property="cardButtons" destination="vyr-cH-d1m" id="J5L-my-0aR"/>
+                        <outletCollection property="cardButtons" destination="9bc-mq-nfI" id="Kl8-sA-8h8"/>
+                        <outletCollection property="cardButtons" destination="e4K-tN-okX" id="TL5-Vl-Qac"/>
+                        <outletCollection property="cardButtons" destination="ugD-dn-hFU" id="IbQ-FW-50D"/>
+                        <outletCollection property="cardButtons" destination="4LT-vE-5Qz" id="b5O-17-xpL"/>
+                        <outletCollection property="cardButtons" destination="2gW-sR-aXr" id="g5T-EA-odV"/>
+                        <outletCollection property="cardButtons" destination="zq0-hJ-XVF" id="QiO-ur-iXW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
