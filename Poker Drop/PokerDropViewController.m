@@ -480,7 +480,7 @@ BOOL deviceIsRotating = NO;
     [self.view bringSubviewToFront:fadingText];
     
     fadingText.text = @"-3";
-    fadingText.textColor = [UIColor redColor];
+    fadingText.textColor = LOSE_SCORE_TEXT;
     
     CGRect myFrame = [self.buttonFrames[myIndex] CGRectValue];
     myFrame.origin.x = (myFrame.origin.x + [self.buttonFrames[otherIndex] CGRectValue].origin.x)/2;
