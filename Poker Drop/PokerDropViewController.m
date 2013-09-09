@@ -59,12 +59,10 @@ BOOL deviceIsRotating = NO;
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     
-    if(buttonIndex == 0) {
+    if(buttonIndex == 1) {
         // chose yes
         [self.game dealWithCardCount:self.cardButtons.count usingDeck:[[PlayingCardDeck alloc] init]];
         [self updateUI];
-    } else if(buttonIndex == 1) {
-        /// chose no
     }
 }
 
@@ -75,8 +73,8 @@ BOOL deviceIsRotating = NO;
                               initWithTitle:@"New Game"
                               message:@"Do you want to reset your game?"
                               delegate: self
-                              cancelButtonTitle:@"Yes"
-                              otherButtonTitles:@"No", nil];
+                              cancelButtonTitle:@"No"
+                              otherButtonTitles:@"Yes", nil];
         [alert show];
     }
 }
