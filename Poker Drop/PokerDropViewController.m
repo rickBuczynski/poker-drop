@@ -146,6 +146,9 @@ BOOL deviceIsRotating = NO;
     }
 }
 
+#define GAIN_SCORE_TEXT [UIColor colorWithRed:0.0 green:0.6 blue:0.0 alpha:1.0]
+#define LOSE_SCORE_TEXT [UIColor colorWithRed:0.6 green:0.0 blue:0.0 alpha:1.0]
+
 -(void)updateUI
 {
     for (UIButton *cardButton in self.cardButtons)
@@ -200,11 +203,11 @@ BOOL deviceIsRotating = NO;
         
     } else if (self.game.score > 0) {
         self.scoreLael.text = [NSString stringWithFormat:@"Cash: $%d", self.game.score];
-        [self.scoreLael setTextColor:[UIColor greenColor]];
+        [self.scoreLael setTextColor:GAIN_SCORE_TEXT];
         
     } else {
         self.scoreLael.text = [NSString stringWithFormat:@"Cash: -$%d", -1*self.game.score];
-        [self.scoreLael setTextColor:[UIColor redColor]];
+        [self.scoreLael setTextColor:LOSE_SCORE_TEXT];
     }
     
     if (self.game.highScore == 0) {
@@ -213,7 +216,7 @@ BOOL deviceIsRotating = NO;
         
     } else {
         self.highScoreLabel.text = [NSString stringWithFormat:@"Highest up: $%d", self.game.highScore];
-        [self.highScoreLabel setTextColor:[UIColor greenColor]];
+        [self.highScoreLabel setTextColor:GAIN_SCORE_TEXT];
         
     }
     
@@ -293,7 +296,7 @@ BOOL deviceIsRotating = NO;
     fadingText.alpha = 1.0f;
     fadingText.backgroundColor = [UIColor clearColor];
     fadingText.font = [[self.cardButtons lastObject] titleLabel].font;
-    fadingText.textColor = [UIColor greenColor];
+    fadingText.textColor = GAIN_SCORE_TEXT;
     
     [UIView animateWithDuration:CARD_FADE_TIME
                      animations:^{
@@ -328,7 +331,7 @@ BOOL deviceIsRotating = NO;
     fadingText.alpha = 1.0f;
     fadingText.backgroundColor = [UIColor clearColor];
     fadingText.font = [[self.cardButtons lastObject] titleLabel].font;
-    fadingText.textColor = [UIColor greenColor];
+    fadingText.textColor = GAIN_SCORE_TEXT;
     
     [fadingText setTransform:CGAffineTransformMakeRotation(-M_PI / 2)];
     
