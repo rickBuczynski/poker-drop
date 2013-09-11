@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		19B5B08617E00EE500127720 /* 57x57.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 19B5B08517E00EE500127720 /* 57x57.PNG */; };
-		19B5B08817E00EEB00127720 /* 114x114.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 19B5B08717E00EEB00127720 /* 114x114.PNG */; };
+		19B5B08D17E0119C00127720 /* 57x57.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 19B5B08517E00EE500127720 /* 57x57.PNG */; };
+		19B5B08E17E011A200127720 /* 114x114.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 19B5B08717E00EEB00127720 /* 114x114.PNG */; };
 		19BA74C217B9E2E200EC25C9 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BA74B517B9E2E200EC25C9 /* Card.m */; };
 		19BA74C317B9E2E200EC25C9 /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BA74B717B9E2E200EC25C9 /* CardMatchingGame.m */; };
 		19BA74C417B9E2E200EC25C9 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BA74B917B9E2E200EC25C9 /* Deck.m */; };
@@ -223,8 +223,8 @@
 				19BC721517B9BC4400F0FFE5 /* Default@2x.png in Resources */,
 				19BC721717B9BC4400F0FFE5 /* Default-568h@2x.png in Resources */,
 				19BC721A17B9BC4400F0FFE5 /* MainStoryboard.storyboard in Resources */,
-				19B5B08617E00EE500127720 /* 57x57.PNG in Resources */,
-				19B5B08817E00EEB00127720 /* 114x114.PNG in Resources */,
+				19B5B08D17E0119C00127720 /* 57x57.PNG in Resources */,
+				19B5B08E17E011A200127720 /* 114x114.PNG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
