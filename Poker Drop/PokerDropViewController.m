@@ -548,6 +548,12 @@ BOOL deviceIsRotating = NO;
                                  [self.game analyzeTwoColumnsAtIndex:MIN(myIndex, otherIndex)];
                                  [self shiftColumns];
                              }
+                         } else {
+                             [self.game swapCardsWithIndex:myIndex andIndex:otherIndex];
+                             for (int i=24; i>=0; i--)
+                             {
+                                 [self.game cardAtIndex:i].previousIndex = i;
+                             }
                          }
                          
                          [self.cardButtons[myIndex] setAlpha:1];
