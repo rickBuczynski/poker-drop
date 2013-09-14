@@ -99,7 +99,6 @@
             otherCard.swapable = NO;
             [(id)card swapWith:(id)otherCard];
             
-            // remove this later when I want cards to animate swapping
             NSUInteger temp = card.previousIndex;
             card.previousIndex = otherCard.previousIndex;
             otherCard.previousIndex = temp;
