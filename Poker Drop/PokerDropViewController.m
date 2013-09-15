@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLael;
 @property (weak, nonatomic) IBOutlet UILabel *highScoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *chainScoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *chainHighScoreLabel;
 @property (strong,nonatomic) NSMutableArray *buttonFrames; // SAVE ALL BUTTON FRAMES IN HERE
 
 @property (nonatomic, strong) GameCenterManager *gameCenterManager;
@@ -238,16 +239,24 @@ BOOL deviceIsRotating = NO;
     }
     
     if (self.game.chainScore == 0) {
-        self.chainScoreLabel.text = [NSString stringWithFormat:@"Current chain: $%d", self.game.chainScore];
+        self.chainScoreLabel.text = [NSString stringWithFormat:@"Combo: $%d", self.game.chainScore];
         [self.chainScoreLabel setTextColor:[UIColor blackColor]];
         
     } else {
-        self.chainScoreLabel.text = [NSString stringWithFormat:@"Current chain: $%d", self.game.chainScore];
+        self.chainScoreLabel.text = [NSString stringWithFormat:@"Combo: $%d", self.game.chainScore];
         [self.chainScoreLabel setTextColor:GAIN_SCORE_TEXT];
         
     }
     
-    
+    if (self.game.chainHighScore == 0) {
+        self.chainHighScoreLabel.text = [NSString stringWithFormat:@"Best Combo: $%d", self.game.chainHighScore];
+        [self.chainHighScoreLabel setTextColor:[UIColor blackColor]];
+        
+    } else {
+        self.chainHighScoreLabel.text = [NSString stringWithFormat:@"Best Combo: $%d", self.game.chainHighScore];
+        [self.chainHighScoreLabel setTextColor:GAIN_SCORE_TEXT];
+        
+    }
 }
 
 -(NSArray* )determineRowfromIndex:(int)index

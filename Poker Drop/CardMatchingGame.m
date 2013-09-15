@@ -14,6 +14,7 @@
 @property (nonatomic) int score;
 @property (nonatomic) int highScore;
 @property (nonatomic) int chainScore;
+@property (nonatomic) int chainHighScore;
 @end
 
 @implementation CardMatchingGame
@@ -129,11 +130,16 @@
 {
     self.highScore = MAX(self.highScore, self.score);
     [[NSUserDefaults standardUserDefaults] setInteger:self.highScore forKey:@"high_score"];
+    
+    self.chainHighScore = MAX(self.chainHighScore, self.chainScore);
+    [[NSUserDefaults standardUserDefaults] setInteger:self.chainHighScore forKey:@"chain_high_score"];
 }
 
 -(void)loadHighScore
 {
     self.highScore = [[NSUserDefaults standardUserDefaults] integerForKey:@"high_score"];
+    
+    self.chainHighScore = [[NSUserDefaults standardUserDefaults] integerForKey:@"chain_high_score"];
 }
 
 - (void)resetChainScore

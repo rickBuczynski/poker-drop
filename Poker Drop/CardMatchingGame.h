@@ -39,6 +39,7 @@
 @property (nonatomic, readonly) int score;
 @property (nonatomic, readonly) int highScore;
 @property (nonatomic, readonly) int chainScore;
+@property (nonatomic, readonly) int chainHighScore;
 
 @property (strong, nonatomic) NSString *flipResult;
 @property (nonatomic) int matchMode;
