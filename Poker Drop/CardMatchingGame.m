@@ -13,6 +13,7 @@
 @property (strong, nonatomic) NSMutableArray *cards;
 @property (nonatomic) int score;
 @property (nonatomic) int highScore;
+@property (nonatomic) int chainScore;
 @end
 
 @implementation CardMatchingGame
@@ -135,49 +136,59 @@
     self.highScore = [[NSUserDefaults standardUserDefaults] integerForKey:@"high_score"];
 }
 
+- (void)resetChainScore
+{
+    self.chainScore = 0;
+}
+
 - (BOOL)isGoodPokerHand:(NSArray *)hand
 {
     NSString* handType = [self.pokerHandEvaluator pokerHandfromCards:hand];
     BOOL isGoodHand;
-        
+    
+    NSUInteger handScore = 0;
     if ([handType isEqualToString:@"Straight Flush"]) {
         if ([self.pokerHandEvaluator highCardInHand:hand] == 14) {
-            self.score+=800;
+            handScore=800;
             isGoodHand = YES;
         } else {
-            self.score+=50;
+            handScore=50;
             isGoodHand = YES;
         }
     } else if ([handType isEqualToString:@"Four of a Kind"]) {
-        self.score+=25;
+        handScore=25;
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Full House"]) {
-        self.score+=9;
+        handScore=9;
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Flush"]) {
-        self.score+=6;
+        handScore=6;
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Straight"]) {
-        self.score+=4;
+        handScore=4;
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Three of a Kind"]) {
-        self.score+=3;
+        handScore=3;
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Two Pair"]) {
-        self.score+=2;
+        handScore=2;
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"One Pair"]) {
-        self.score+=1;
+        handScore=1;
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"High Card"]) {
-        self.score+=0;
+        handScore=0;
         isGoodHand = NO;
     }
     else {
         isGoodHand = NO;
     }
     
+    self.score += handScore;
+    self.chainScore += handScore;
+    
     [self updateHighScore];
+    
     return isGoodHand;
     
 }
@@ -187,49 +198,55 @@
     NSString* handType = [self.pokerHandEvaluator pokerHandfromCards:hand];
     BOOL isGoodHand;
     
+    
+    NSUInteger handScore = 0;
     if ([handType isEqualToString:@"Straight Flush"]) {
         if ([self.pokerHandEvaluator highCardInHand:hand] == 14) {
-            self.score+=800;
+            handScore = 800;
             isGoodHand = YES;
         } else {
-            self.score+=50;
+            handScore = 50;
             isGoodHand = YES;
         }
     } else if ([handType isEqualToString:@"Four of a Kind"]) {
-        self.score+=25;
+        handScore = 25;
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Full House"]) {
-        self.score+=9;
+        handScore = 9;
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Flush"]) {
-        self.score+=6;
+        handScore = 6;
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Straight"]) {
-        self.score+=4;
+        handScore = 4;
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Three of a Kind"]) {
-        self.score+=3;
+        handScore = 3;
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Two Pair"]) {
-        self.score+=2;
+        handScore = 2;
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"One Pair"]) {
         if ([self.pokerHandEvaluator rankOfPairInHand:hand] > 10) {
-            self.score+=0;
+            handScore = 0;
             isGoodHand = NO;
         } else {
-            self.score+=0;
+            handScore = 0;
             isGoodHand = NO;
         }
     } else if ([handType isEqualToString:@"High Card"]) {
-        self.score+=0;
+        handScore = 0;
         isGoodHand = NO;
     }
     else {
         isGoodHand = NO;
     }
     
+    self.score += handScore;
+    self.chainScore += handScore;
+    
     [self updateHighScore];
+    
     return isGoodHand;
 }
 

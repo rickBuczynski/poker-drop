@@ -34,9 +34,11 @@
 -(void)swapCardsWithIndex:(NSUInteger)i andIndex:(NSUInteger)j;
 
 -(void)loadHighScore;
+-(void)resetChainScore;
 
 @property (nonatomic, readonly) int score;
 @property (nonatomic, readonly) int highScore;
+@property (nonatomic, readonly) int chainScore;
 
 @property (strong, nonatomic) NSString *flipResult;
 @property (nonatomic) int matchMode;

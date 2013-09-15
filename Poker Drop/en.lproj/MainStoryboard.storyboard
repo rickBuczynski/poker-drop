@@ -13,13 +13,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="HIGHSCORE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nR4-4W-ia4">
-                                <rect key="frame" x="43" y="475" width="131" height="21"/>
+                                <rect key="frame" x="42" y="457" width="131" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="SCORE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eMn-kE-cAy">
-                                <rect key="frame" x="43" y="505" width="131" height="21"/>
+                                <rect key="frame" x="42" y="485" width="131" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -414,10 +414,17 @@
                                     <action selector="selectCard:" destination="2" eventType="touchUpInside" id="zVu-V1-B2i"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="CHAINSCORE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LoE-xv-fFm">
+                                <rect key="frame" x="42" y="512" width="131" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="chainScoreLabel" destination="LoE-xv-fFm" id="aMy-Lk-SYD"/>
                         <outlet property="highScoreLabel" destination="nR4-4W-ia4" id="Dkf-vw-3Pv"/>
                         <outlet property="scoreLael" destination="eMn-kE-cAy" id="zUq-tA-bE1"/>
                         <outletCollection property="cardButtons" destination="Dvs-O9-PCs" id="PQV-bV-LQv"/>
@@ -457,6 +464,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PokerDropViewController.h"/>
             <relationships>
                 <relationship kind="action" name="selectCard:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="chainScoreLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="highScoreLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="scoreLael" candidateClass="UILabel"/>
                 <relationship kind="outletCollection" name="cardButtons" candidateClass="UIButton"/>

@@ -22,6 +22,7 @@
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLael;
 @property (weak, nonatomic) IBOutlet UILabel *highScoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *chainScoreLabel;
 @property (strong,nonatomic) NSMutableArray *buttonFrames; // SAVE ALL BUTTON FRAMES IN HERE
 
 @property (nonatomic, strong) GameCenterManager *gameCenterManager;
@@ -236,6 +237,15 @@ BOOL deviceIsRotating = NO;
         
     }
     
+    if (self.game.chainScore == 0) {
+        self.chainScoreLabel.text = [NSString stringWithFormat:@"Current chain: $%d", self.game.chainScore];
+        [self.chainScoreLabel setTextColor:[UIColor blackColor]];
+        
+    } else {
+        self.chainScoreLabel.text = [NSString stringWithFormat:@"Current chain: $%d", self.game.chainScore];
+        [self.chainScoreLabel setTextColor:GAIN_SCORE_TEXT];
+        
+    }
     
     
 }
@@ -585,6 +595,8 @@ BOOL deviceIsRotating = NO;
     
     if (!selectCardLocked)
     {
+        [self.game resetChainScore];
+        
         NSUInteger myIndex = [self.cardButtons indexOfObject:sender];
         NSUInteger otherIndex = [self.game selectAndSwapAtIndex:myIndex];
         //NSLog(@"myIdex: %d    otherIndex: %d",myIndex,otherIndex);
