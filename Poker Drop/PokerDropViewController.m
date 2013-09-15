@@ -11,6 +11,9 @@
 #import "PlayingCard.h"
 #import "CardMatchingGame.h"
 
+#import "AppSpecificValues.h"
+#import "GameCenterManager.h"
+
 #import <QuartzCore/QuartzCore.h>
 
 @interface PokerDropViewController ()
@@ -20,6 +23,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLael;
 @property (weak, nonatomic) IBOutlet UILabel *highScoreLabel;
 @property (strong,nonatomic) NSMutableArray *buttonFrames; // SAVE ALL BUTTON FRAMES IN HERE
+
+@property (nonatomic, strong) GameCenterManager *gameCenterManager;
+@property (nonatomic, strong) NSString* currentLeaderBoard;
 
 @end
 
@@ -127,6 +133,16 @@ BOOL deviceIsRotating = NO;
         
         [self.buttonFrames insertObject:[[NSValue valueWithCGRect:button.frame] copy] atIndex:[self.cardButtons indexOfObject:button]];
         //NSLog(@"%@",[NSValue valueWithCGRect:button.frame]);
+    }
+    
+    if ([GameCenterManager isGameCenterAvailable]) {
+        self.gameCenterManager = [[GameCenterManager alloc] init];
+        [self.gameCenterManager setDelegate:self];
+        [self.gameCenterManager authenticateLocalUser];
+    
+        self.currentLeaderBoard = kLeaderboardID;
+    } else {
+        // The current device does not support Game Center.
     }
     
     [self.game loadHighScore];

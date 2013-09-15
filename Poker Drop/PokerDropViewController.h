@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GameKit/GameKit.h>
+#import "GameCenterManager.h"
+@class GameCenterManager;
 
-@interface PokerDropViewController : UIViewController
+// may need to add GKLeaderboardViewControllerDelegate, GKAchievementViewControllerDelegate
+// probably needed for showing leaders or acheivements in the app
+
+@interface PokerDropViewController : UIViewController <UIActionSheetDelegate, GameCenterManagerDelegate> 
 
 @end

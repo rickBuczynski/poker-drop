@@ -27,6 +27,8 @@
 		19BC721717B9BC4400F0FFE5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19BC721617B9BC4400F0FFE5 /* Default-568h@2x.png */; };
 		19BC721A17B9BC4400F0FFE5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19BC721817B9BC4400F0FFE5 /* MainStoryboard.storyboard */; };
 		19BC721D17B9BC4400F0FFE5 /* PokerDropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19BC721C17B9BC4400F0FFE5 /* PokerDropViewController.m */; };
+		19C588B117E52EAB00C66CAE /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C588B017E52EAB00C66CAE /* GameKit.framework */; };
+		19E7405B17E60CCD00151231 /* GameCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19DFE6B617E556BD008AD7F2 /* GameCenterManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,10 @@
 		19BC721917B9BC4400F0FFE5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		19BC721B17B9BC4400F0FFE5 /* PokerDropViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokerDropViewController.h; sourceTree = "<group>"; };
 		19BC721C17B9BC4400F0FFE5 /* PokerDropViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokerDropViewController.m; sourceTree = "<group>"; };
+		19C588B017E52EAB00C66CAE /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		19DFE6B417E556BD008AD7F2 /* AppSpecificValues.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppSpecificValues.h; sourceTree = "<group>"; };
+		19DFE6B517E556BD008AD7F2 /* GameCenterManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameCenterManager.h; sourceTree = "<group>"; };
+		19DFE6B617E556BD008AD7F2 /* GameCenterManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameCenterManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19C588B117E52EAB00C66CAE /* GameKit.framework in Frameworks */,
 				19BC720117B9BC4400F0FFE5 /* UIKit.framework in Frameworks */,
 				19BC720317B9BC4400F0FFE5 /* Foundation.framework in Frameworks */,
 				19BC720517B9BC4400F0FFE5 /* CoreGraphics.framework in Frameworks */,
@@ -83,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				19BA74CA17B9E36400EC25C9 /* Poker */,
+				19DFE6B317E55691008AD7F2 /* GameCenter */,
 				19BA74B417B9E2E200EC25C9 /* Card.h */,
 				19BA74B517B9E2E200EC25C9 /* Card.m */,
 				19BA74B617B9E2E200EC25C9 /* CardMatchingGame.h */,
@@ -112,6 +120,7 @@
 		19BC71F417B9BC4400F0FFE5 = {
 			isa = PBXGroup;
 			children = (
+				19C588B017E52EAB00C66CAE /* GameKit.framework */,
 				19B5B08717E00EEB00127720 /* 114x114.PNG */,
 				19B5B08517E00EE500127720 /* 57x57.PNG */,
 				19BC720617B9BC4400F0FFE5 /* Poker Drop */,
@@ -164,6 +173,16 @@
 				19BC721617B9BC4400F0FFE5 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		19DFE6B317E55691008AD7F2 /* GameCenter */ = {
+			isa = PBXGroup;
+			children = (
+				19DFE6B417E556BD008AD7F2 /* AppSpecificValues.h */,
+				19DFE6B517E556BD008AD7F2 /* GameCenterManager.h */,
+				19DFE6B617E556BD008AD7F2 /* GameCenterManager.m */,
+			);
+			name = GameCenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19E7405B17E60CCD00151231 /* GameCenterManager.m in Sources */,
 				19BC720D17B9BC4400F0FFE5 /* main.m in Sources */,
 				19BC721117B9BC4400F0FFE5 /* PokerDropAppDelegate.m in Sources */,
 				19BC721D17B9BC4400F0FFE5 /* PokerDropViewController.m in Sources */,
