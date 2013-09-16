@@ -39,7 +39,15 @@ BOOL deviceIsRotating = NO;
 {
     if(self.game.highScore > 0)
     {
-        [self.gameCenterManager reportScore:self.game.highScore forCategory:kLeaderboardID];
+        [self.gameCenterManager reportScore:self.game.highScore forCategory:highestUpLeaderboardID];
+    }
+}
+
+-(void)submitBestCombo
+{
+    if(self.game.chainHighScore > 0)
+    {
+        [self.gameCenterManager reportScore:self.game.chainHighScore forCategory:bestComboLeaderboardID];
     }
 }
 
@@ -272,6 +280,11 @@ BOOL deviceIsRotating = NO;
     if (self.game.isHighScoreChanged) {
         [self submitHighScore];
         self.game.highScoreChanged = NO;
+    }
+    
+    if (self.game.isChainHighScoreChanged) {
+        [self submitBestCombo];
+        self.game.chainHighScoreChanged = NO;
     }
 }
 

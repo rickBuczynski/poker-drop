@@ -54,7 +54,8 @@
 //  iTunes Connect will accept will work fine.
 
 //Leaderboard Category IDs
-#define kLeaderboardID @"com.rickbuczynski.HighestUp"
+#define highestUpLeaderboardID @"com.rickbuczynski.HighestUp"
+#define bestComboLeaderboardID @"com.rickbuczynski.BestCombo"
 
 //Achievement IDs
 #define kAchievementReset @"com.rickbuczynski.ResetGame"
