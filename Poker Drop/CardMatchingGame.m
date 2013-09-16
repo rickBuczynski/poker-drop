@@ -8,6 +8,7 @@
 
 #import "CardMatchingGame.h"
 #import "PlayingCard.h"
+#import "PokerDropViewController.h"
 
 @interface CardMatchingGame()
 @property (strong, nonatomic) NSMutableArray *cards;
@@ -51,7 +52,8 @@
     
     self.deck=deck;
     
-    self.matchMode = 2;
+    self.highScoreChanged = NO;
+    self.chainHighScoreChanged = NO;
     
     
     return self;
@@ -128,11 +130,17 @@
 
 -(void)updateHighScore
 {
-    self.highScore = MAX(self.highScore, self.score);
-    [[NSUserDefaults standardUserDefaults] setInteger:self.highScore forKey:@"high_score"];
+    if (self.score > self.highScore) {
+        self.highScore = self.score;
+        [[NSUserDefaults standardUserDefaults] setInteger:self.highScore forKey:@"high_score"];
+        self.highScoreChanged = YES;
+    }
     
-    self.chainHighScore = MAX(self.chainHighScore, self.chainScore);
-    [[NSUserDefaults standardUserDefaults] setInteger:self.chainHighScore forKey:@"chain_high_score"];
+    if (self.chainScore > self.chainHighScore) {
+        self.chainHighScore = self.chainScore;
+        [[NSUserDefaults standardUserDefaults] setInteger:self.chainHighScore forKey:@"chain_high_score"];
+        self.chainHighScoreChanged = YES;
+    }
 }
 
 -(void)loadHighScore

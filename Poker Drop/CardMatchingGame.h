@@ -40,6 +40,8 @@
 @property (nonatomic, readonly) int highScore;
 @property (nonatomic, readonly) int chainScore;
 @property (nonatomic, readonly) int chainHighScore;
+@property (nonatomic, getter = isHighScoreChanged) bool highScoreChanged;
+@property (nonatomic, getter = isChainHighScoreChanged) bool chainHighScoreChanged;
 
 @property (strong, nonatomic) NSString *flipResult;
 @property (nonatomic) int matchMode;

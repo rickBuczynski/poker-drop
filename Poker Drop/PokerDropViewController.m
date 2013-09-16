@@ -27,7 +27,6 @@
 @property (strong,nonatomic) NSMutableArray *buttonFrames; // SAVE ALL BUTTON FRAMES IN HERE
 
 @property (nonatomic, strong) GameCenterManager *gameCenterManager;
-@property (nonatomic, strong) NSString* currentLeaderBoard;
 
 @end
 
@@ -35,6 +34,14 @@
 
 BOOL selectCardLocked = NO;
 BOOL deviceIsRotating = NO;
+
+-(void)submitHighScore
+{
+    if(self.game.highScore > 0)
+    {
+        [self.gameCenterManager reportScore:self.game.highScore forCategory:kLeaderboardID];
+    }
+}
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
@@ -71,6 +78,12 @@ BOOL deviceIsRotating = NO;
         // chose yes
         [self.game dealWithCardCount:self.cardButtons.count usingDeck:[[PlayingCardDeck alloc] init]];
         [self updateUI];
+        
+        [self.gameCenterManager submitAchievement:kAchievementReset percentComplete:100];
+    } else {
+        // using no here to reset achiements
+        // TODO remove this
+        [self.gameCenterManager resetAchievements];
     }
 }
 
@@ -141,8 +154,6 @@ BOOL deviceIsRotating = NO;
         self.gameCenterManager = [[GameCenterManager alloc] init];
         [self.gameCenterManager setDelegate:self];
         [self.gameCenterManager authenticateLocalUser];
-    
-        self.currentLeaderBoard = kLeaderboardID;
     } else {
         // The current device does not support Game Center.
     }
@@ -256,6 +267,11 @@ BOOL deviceIsRotating = NO;
         self.chainHighScoreLabel.text = [NSString stringWithFormat:@"Best Combo: $%d", self.game.chainHighScore];
         [self.chainHighScoreLabel setTextColor:GAIN_SCORE_TEXT];
         
+    }
+    
+    if (self.game.isHighScoreChanged) {
+        [self submitHighScore];
+        self.game.highScoreChanged = NO;
     }
 }
 
