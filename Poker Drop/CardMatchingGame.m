@@ -155,6 +155,17 @@
     self.chainScore = 0;
 }
 
+#define SCORE_ROYAL_FLUSH 250
+#define SCORE_STRAIGHT_FLUSH 50
+#define SCORE_FOUR_KIND 25
+#define SCORE_FULL_HOUSE 9
+#define SCORE_FLUSH 6
+#define SCORE_STRAIGHT 4
+#define SCORE_THREE_KIND 3
+#define SCORE_TWO_PAIR 2
+#define SCORE_ONE_PAIR 1
+
+
 - (BOOL)isGoodPokerHand:(NSArray *)hand
 {
     NSString* handType = [self.pokerHandEvaluator pokerHandfromCards:hand];
@@ -163,32 +174,32 @@
     NSUInteger handScore = 0;
     if ([handType isEqualToString:@"Straight Flush"]) {
         if ([self.pokerHandEvaluator highCardInHand:hand] == 14) {
-            handScore=800;
+            handScore=SCORE_ROYAL_FLUSH;
             isGoodHand = YES;
         } else {
-            handScore=50;
+            handScore=SCORE_STRAIGHT_FLUSH;
             isGoodHand = YES;
         }
     } else if ([handType isEqualToString:@"Four of a Kind"]) {
-        handScore=25;
+        handScore=SCORE_FOUR_KIND;
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Full House"]) {
-        handScore=9;
+        handScore=SCORE_FULL_HOUSE;
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Flush"]) {
-        handScore=6;
+        handScore=SCORE_FLUSH;
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Straight"]) {
-        handScore=4;
+        handScore=SCORE_STRAIGHT;
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Three of a Kind"]) {
-        handScore=3;
+        handScore=SCORE_THREE_KIND;
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Two Pair"]) {
-        handScore=2;
+        handScore=SCORE_TWO_PAIR;
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"One Pair"]) {
-        handScore=1;
+        handScore=SCORE_ONE_PAIR;
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"High Card"]) {
         handScore=0;
@@ -216,29 +227,29 @@
     NSUInteger handScore = 0;
     if ([handType isEqualToString:@"Straight Flush"]) {
         if ([self.pokerHandEvaluator highCardInHand:hand] == 14) {
-            handScore = 800;
+            handScore = SCORE_ROYAL_FLUSH;
             isGoodHand = YES;
         } else {
-            handScore = 50;
+            handScore = SCORE_STRAIGHT_FLUSH;
             isGoodHand = YES;
         }
     } else if ([handType isEqualToString:@"Four of a Kind"]) {
-        handScore = 25;
+        handScore = SCORE_FOUR_KIND;
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Full House"]) {
-        handScore = 9;
+        handScore = SCORE_FULL_HOUSE;
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Flush"]) {
-        handScore = 6;
+        handScore = SCORE_FLUSH;
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Straight"]) {
-        handScore = 4;
+        handScore = SCORE_STRAIGHT;
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Three of a Kind"]) {
-        handScore = 3;
+        handScore = SCORE_THREE_KIND;
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Two Pair"]) {
-        handScore = 2;
+        handScore = SCORE_TWO_PAIR;
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"One Pair"]) {
         if ([self.pokerHandEvaluator rankOfPairInHand:hand] > 10) {
@@ -325,23 +336,23 @@
     
     NSUInteger handScore = 0;
     if ([handType isEqualToString:@"Royal Flush"]) {
-        handScore = 800;
+        handScore = SCORE_ROYAL_FLUSH;
     } else if ([handType isEqualToString:@"Straight Flush"]) {
-        handScore = 50;
+        handScore = SCORE_STRAIGHT_FLUSH;
     } else if ([handType isEqualToString:@"Four of a Kind"]) {
-        handScore = 25;
+        handScore = SCORE_FOUR_KIND;
     } else if ([handType isEqualToString:@"Full House"]) {
-        handScore=9;
+        handScore=SCORE_FULL_HOUSE;
     } else if ([handType isEqualToString:@"Flush"]) {
-        handScore=6;
+        handScore=SCORE_FLUSH;
     } else if ([handType isEqualToString:@"Straight"]) {
-        handScore=4;
+        handScore=SCORE_STRAIGHT;
     } else if ([handType isEqualToString:@"Three of a Kind"]) {
-        handScore=3;
+        handScore=SCORE_THREE_KIND;
     } else if ([handType isEqualToString:@"Two Pair"]) {
-        handScore=2;
+        handScore=SCORE_TWO_PAIR;
     } else if ([handType isEqualToString:@"One Pair"]) {
-        handScore=1;
+        handScore=SCORE_ONE_PAIR;
     }
     
     return [NSString stringWithFormat:@"    +%d",handScore];
