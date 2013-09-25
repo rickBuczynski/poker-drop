@@ -566,7 +566,7 @@ BOOL deviceIsRotating = NO;
     fadingText.alpha = 1.0f;
     fadingText.backgroundColor = [UIColor clearColor];
     
-    [UIView animateWithDuration:CARD_SWAP_TIME*0.6
+    [UIView animateWithDuration:CARD_SWAP_TIME
                      animations:^{
                          fadingText.alpha = 0.0f;
                          //fadingText.transform = CGAffineTransformMakeScale(0.0,0.0);
