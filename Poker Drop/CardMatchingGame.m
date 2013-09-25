@@ -9,6 +9,7 @@
 #import "CardMatchingGame.h"
 #import "PlayingCard.h"
 #import "PokerDropViewController.h"
+#import "AppSpecificValues.h"
 
 @interface CardMatchingGame()
 @property (strong, nonatomic) NSMutableArray *cards;
@@ -30,6 +31,24 @@
 {
     if (!_cards) _cards = [[NSMutableArray alloc] init];
     return _cards;
+}
+
+- (NSMutableDictionary *) acheivementStatus
+{
+    if (!_acheivementStatus)
+    {
+        _acheivementStatus = [@{achievementOnePair: @NO,
+                                achievementTwoPair: @NO,
+                                achievementThreeKind: @NO,
+                                achievementStraight: @NO,
+                                achievementFlush: @NO,
+                                achievementFullHouse: @NO,
+                                achievementFourKind: @NO,
+                                achievementStraightFlush: @NO,
+                                achievementRoyalFlush: @NO
+                                } mutableCopy];
+    }
+    return _acheivementStatus;
 }
 
 - (id)initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck
@@ -54,6 +73,7 @@
     
     self.highScoreChanged = NO;
     self.chainHighScoreChanged = NO;
+    self.acheivementChanged = NO;
     
     
     return self;
@@ -155,6 +175,14 @@
     self.chainScore = 0;
 }
 
+-(void)gainAcheivement:(NSString *)achievement
+{
+    if ([self.acheivementStatus[achievement] isEqualToNumber:@NO]) {
+        self.acheivementStatus[achievement] = @YES;
+        self.acheivementChanged = @YES;
+    }
+}
+
 #define SCORE_ROYAL_FLUSH 250
 #define SCORE_STRAIGHT_FLUSH 50
 #define SCORE_FOUR_KIND 25
@@ -175,31 +203,40 @@
     if ([handType isEqualToString:@"Straight Flush"]) {
         if ([self.pokerHandEvaluator highCardInHand:hand] == 14) {
             handScore=SCORE_ROYAL_FLUSH;
+            [self gainAcheivement:achievementRoyalFlush];
             isGoodHand = YES;
         } else {
             handScore=SCORE_STRAIGHT_FLUSH;
+            [self gainAcheivement:achievementStraightFlush];
             isGoodHand = YES;
         }
     } else if ([handType isEqualToString:@"Four of a Kind"]) {
         handScore=SCORE_FOUR_KIND;
+        [self gainAcheivement:achievementFourKind];
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Full House"]) {
         handScore=SCORE_FULL_HOUSE;
+        [self gainAcheivement:achievementFullHouse];
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Flush"]) {
         handScore=SCORE_FLUSH;
+        [self gainAcheivement:achievementFlush];
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Straight"]) {
         handScore=SCORE_STRAIGHT;
+        [self gainAcheivement:achievementStraight];
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Three of a Kind"]) {
         handScore=SCORE_THREE_KIND;
+        [self gainAcheivement:achievementThreeKind];
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Two Pair"]) {
         handScore=SCORE_TWO_PAIR;
+        [self gainAcheivement:achievementTwoPair];
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"One Pair"]) {
         handScore=SCORE_ONE_PAIR;
+        [self gainAcheivement:achievementOnePair];
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"High Card"]) {
         handScore=0;
@@ -228,28 +265,36 @@
     if ([handType isEqualToString:@"Straight Flush"]) {
         if ([self.pokerHandEvaluator highCardInHand:hand] == 14) {
             handScore = SCORE_ROYAL_FLUSH;
+            [self gainAcheivement:achievementRoyalFlush];
             isGoodHand = YES;
         } else {
             handScore = SCORE_STRAIGHT_FLUSH;
+            [self gainAcheivement:achievementStraightFlush];
             isGoodHand = YES;
         }
     } else if ([handType isEqualToString:@"Four of a Kind"]) {
         handScore = SCORE_FOUR_KIND;
+        [self gainAcheivement:achievementFourKind];
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Full House"]) {
         handScore = SCORE_FULL_HOUSE;
+        [self gainAcheivement:achievementFullHouse];
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Flush"]) {
         handScore = SCORE_FLUSH;
+        [self gainAcheivement:achievementFlush];
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Straight"]) {
         handScore = SCORE_STRAIGHT;
+        [self gainAcheivement:achievementStraight];
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Three of a Kind"]) {
         handScore = SCORE_THREE_KIND;
+        [self gainAcheivement:achievementThreeKind];
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"Two Pair"]) {
         handScore = SCORE_TWO_PAIR;
+        [self gainAcheivement:achievementTwoPair];
         isGoodHand = YES;
     } else if ([handType isEqualToString:@"One Pair"]) {
         if ([self.pokerHandEvaluator rankOfPairInHand:hand] > 10) {

@@ -48,6 +48,7 @@
 @property (strong, nonatomic) pokerEvaluator *pokerHandEvaluator;
 @property (strong,nonatomic) Deck *deck;
 
-
+@property (strong,nonatomic) NSMutableDictionary *acheivementStatus;
+@property (nonatomic, getter = isAcheivementChanged) bool acheivementChanged;
 
 @end

@@ -51,6 +51,19 @@ BOOL deviceIsRotating = NO;
     }
 }
 
+-(void)checkAchievements
+{
+    if (self.game.isAcheivementChanged) {
+        for(NSString *achievement in [self.game.acheivementStatus allKeys] )
+        {
+            if ([self.game.acheivementStatus[achievement] isEqualToNumber:@YES])
+            {
+                [self.gameCenterManager submitAchievement:achievement percentComplete:100];
+            }
+        }
+    }
+}
+
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
     deviceIsRotating = YES;
@@ -86,12 +99,8 @@ BOOL deviceIsRotating = NO;
         // chose yes
         [self.game dealWithCardCount:self.cardButtons.count usingDeck:[[PlayingCardDeck alloc] init]];
         [self updateUI];
-        
-        [self.gameCenterManager submitAchievement:kAchievementReset percentComplete:100];
     } else {
-        // using no here to reset achiements
-        // TODO remove this
-        [self.gameCenterManager resetAchievements];
+        // cancel
     }
 }
 
@@ -286,6 +295,8 @@ BOOL deviceIsRotating = NO;
         [self submitBestCombo];
         self.game.chainHighScoreChanged = NO;
     }
+    
+    [self checkAchievements];
 }
 
 -(NSArray* )determineRowfromIndex:(int)index

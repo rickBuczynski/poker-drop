@@ -58,4 +58,12 @@
 #define bestComboLeaderboardID @"com.rickbuczynski.BestCombo"
 
 //Achievement IDs
-#define kAchievementReset @"com.rickbuczynski.ResetGame"
+#define achievementOnePair @"com.rickbuczynski.OnePair"
+#define achievementTwoPair @"com.rickbuczynski.TwoPair"
+#define achievementThreeKind @"com.rickbuczynski.ThreeKind"
+#define achievementStraight @"com.rickbuczynski.Straight"
+#define achievementFlush @"com.rickbuczynski.Flush"
+#define achievementFullHouse @"com.rickbuczynski.FullHouse"
+#define achievementFourKind @"com.rickbuczynski.FourKind"
+#define achievementStraightFlush @"com.rickbuczynski.StraightFlush"
+#define achievementRoyalFlush @"com.rickbuczynski.RoyalFlush"
