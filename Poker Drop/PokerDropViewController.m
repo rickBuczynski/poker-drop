@@ -35,6 +35,11 @@
 BOOL selectCardLocked = NO;
 BOOL deviceIsRotating = NO;
 
+
+#define CARD_SHIFT_TIME 1.7
+#define CARD_FADE_TIME 1.0
+#define CARD_SWAP_TIME 0.8
+
 // need these to stop the "missed method" error
 // in gamecentermanager
 -(void)scoreReported:(NSError *)error {
@@ -357,9 +362,6 @@ BOOL deviceIsRotating = NO;
              ];
 }
 
-#define CARD_SHIFT_TIME 1.7
-#define CARD_FADE_TIME 1.0
-
 - (void)fadeButtonWithContents:(NSString*)contents index:(NSUInteger)index
 {
     
@@ -574,7 +576,7 @@ BOOL deviceIsRotating = NO;
     }
 }
 
-#define CARD_SWAP_TIME 0.8
+
 
 -(void)fadePenaltyForSwappingFromIndex:(NSUInteger)myIndex to:(NSUInteger)otherIndex
 {
