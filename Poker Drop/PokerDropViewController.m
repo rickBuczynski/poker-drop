@@ -36,9 +36,9 @@ BOOL selectCardLocked = NO;
 BOOL deviceIsRotating = NO;
 
 
-#define CARD_SHIFT_TIME 1.7
-#define CARD_FADE_TIME 1.0
-#define CARD_SWAP_TIME 0.8
+#define CARD_SHIFT_TIME 1.5
+#define CARD_FADE_TIME 1.2
+#define CARD_SWAP_TIME 1.0
 
 // need these to stop the "missed method" error
 // in gamecentermanager
