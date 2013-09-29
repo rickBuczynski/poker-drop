@@ -35,6 +35,33 @@
 BOOL selectCardLocked = NO;
 BOOL deviceIsRotating = NO;
 
+// need these to stop the "missed method" error
+// in gamecentermanager
+-(void)scoreReported:(NSError *)error {
+    
+}
+-(void) processGameCenterAuth:(NSError *)error
+{
+    
+}
+-(void) reloadScoresComplete:(GKLeaderboard *)leaderBoard error:(NSError *)error
+{
+    
+}
+-(void) achievementSubmitted:(GKAchievement *)ach error:(NSError *)error
+{
+    
+}
+-(void) achievementResetResult:(NSError *)error
+{
+    
+}
+-(void) mappedPlayerIDToPlayer:(GKPlayer *)player error:(NSError *)error
+{
+    
+}
+
+
 -(void)submitHighScore
 {
     if(self.game.highScore > 0)
@@ -101,6 +128,7 @@ BOOL deviceIsRotating = NO;
         [self updateUI];
     } else {
         // cancel
+        //[self.gameCenterManager resetAchievements];
     }
 }
 

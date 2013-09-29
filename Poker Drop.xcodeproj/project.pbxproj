@@ -214,6 +214,11 @@
 				CLASSPREFIX = PokerDrop;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Rick Buczynski";
+				TargetAttributes = {
+					19BC71FC17B9BC4400F0FFE5 = {
+						DevelopmentTeam = ZBG844P4F6;
+					};
+				};
 			};
 			buildConfigurationList = 19BC71F817B9BC4400F0FFE5 /* Build configuration list for PBXProject "Poker Drop" */;
 			compatibilityVersion = "Xcode 3.2";
